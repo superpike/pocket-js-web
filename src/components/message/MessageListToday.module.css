@@ -65,7 +65,7 @@ margin: 0;
 .text {
   word-wrap: break-word;
   max-width: 500px;
-  white-space: pre;
+  white-space: pre-line;
 }
 .time {
   padding-left: 11px;
