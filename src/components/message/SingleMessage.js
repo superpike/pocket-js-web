@@ -31,7 +31,7 @@ export default class SingleMessage extends React.Component {
                       {this.props.message.author}
                     </div>
                     <div className={classes.text}>
-                      {this.props.message.message}
+                    {this.props.message.message}
                     </div>
                   </div>
                   <div className={StyleTime}>
