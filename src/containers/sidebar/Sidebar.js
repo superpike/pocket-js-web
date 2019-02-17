@@ -1,5 +1,5 @@
 import React from 'react';
-import { location } from 'react-router';
+// import { location } from 'react-router';
 
 import SidebarHeader from './SidebarHeader';
 import Tab from '../../components/sidebar/Header';
@@ -22,14 +22,14 @@ class Sidebar extends React.Component {
                 <div className={classes.Tabs}>
                     <div className={classes.Tab}
                         onClick={() => this.setState({ active: 'chats' })}>
-                        <Tab href="/chats" anotherLink='/'>
+                        <Tab href='/chats' anotherLink='/'>
                             <i className={classes.Icon + ' fas fa-envelope'} />
                             <span className={classes.Text}>Чаты</span>
                         </Tab>
                     </div>
                     <div className={classes.Tab}
                         onClick={() => this.setState({ active: 'contacts' })}>
-                        <Tab href="/contacts">
+                        <Tab href='/contacts'>
                             <i className={(this.state.active === 'contacts') ?
                                 classes.IconActive + ' fas fa-user-friends' :
                                 classes.Icon + ' fas fa-user-friends'} />

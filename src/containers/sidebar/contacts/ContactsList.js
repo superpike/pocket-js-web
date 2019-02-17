@@ -17,32 +17,34 @@ class ContactsList extends React.Component {
         this.setState({
             modal: !this.state.modal,
             profile: data
-        });         
+        });
     }
 
-    render(){
-        if(!this.props.contacts.length){
+    render() {
+        if (!this.props.contacts.length) {
             return null; //Если данные еще загружаются
         }
 
-        let profile = this.state.modal ? (
+        const profile = this.state.modal ? (
             <>
-                <Modal classesNames = 'Profile'>   
-                    <ProfileUser profile = {this.state.profile} 
-                                profileToggle = {this.profileToggle} 
-                                addToBlackList = {this.props.addToBlackList}
-                                id = 'Profile'/>
+                <Modal classesNames = 'Profile'>
+                    <ProfileUser
+                        profile = {this.state.profile}
+                        profileToggle = {this.profileToggle}
+                        addToBlackList = {this.props.addToBlackList}
+                        id = 'Profile'
+                    />
                 </Modal>
             </>
         ) : null;
 
-        let contacts = this.props.contacts.map((user, index) => {
+        const contacts = this.props.contacts.map((user, index) => {
             return <ContactsItem key={index} profileToggle = {this.profileToggle} {...user} />
         });
 
         return (
             <div>
-                <div className={styles.List}>        
+                <div className={styles.List}>
                     {contacts}
                 </div>
 

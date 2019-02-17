@@ -10,14 +10,14 @@ const backdrop = (props) => {
     assignedClasses.push('Backdrop');
 
     return (
-        props.show ? 
-            <div 
-                className={assignedClasses.map(el => {return classes[el]}).join(' ')} 
-                onClick={props.clicked}>
-            </div> 
-            : 
+        props.show ?
+            <div
+                className={assignedClasses.map(el => {return classes[el]}).join(' ')}
+                onClick={props.clicked}
+            />
+            :
             null
     )
 }
 
-export default backdrop;
+export default backdrop

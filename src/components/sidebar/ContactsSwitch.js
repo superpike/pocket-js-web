@@ -6,10 +6,10 @@ import Contacts from '../../containers/sidebar/contacts/Contacts'
 
 
 const ContactsSwitch = () => (
-	<Switch>
-		<Route exact path='/contacts' component={Contacts}/>
-		<Route path='/contacts/:id' component={Contacts}/>
-	</Switch>
+	 <Switch>
+		 <Route exact path='/contacts' component={Contacts}/>
+		 <Route path='/contacts/:id' component={Contacts}/>
+	 </Switch>
 )
 
 

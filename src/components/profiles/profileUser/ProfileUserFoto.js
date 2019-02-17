@@ -1,9 +1,15 @@
-import React, {Component} from "react";
-import styles from "./ProfileUser.module.css";
+import React, { Component } from 'react';
+import styles from './ProfileUser.module.css';
+import avatar from '../../../images/personal_profile/avatar.svg';
+
 
 class ProfileUserFoto extends Component {
     render() {
-        return <img src={require("../../../images/personal_profile/avatar.svg")} alt="#" className={styles['header__avatar']}/>
+        return <img
+            src={avatar}
+            alt='#'
+            className={ styles.header__avatar }
+        />
     }
 }
 

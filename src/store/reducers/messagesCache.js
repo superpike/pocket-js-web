@@ -1,6 +1,6 @@
 const ChatMessagesСache = {
     messages: {},
-    getChatMessages(chat_id, limit, offset = 0){ //limit - ограничение забираемых сообщений, offset - сдвиг, чтобы забрать историю
+    getChatMessages(chat_id, limit, offset = 0) { //limit - ограничение забираемых сообщений, offset - сдвиг, чтобы забрать историю
         console.log('messages from cache');
         return chat_id in this.messages ? this.messages[chat_id].slice(offset, offset + limit) : [];
     },
@@ -15,9 +15,8 @@ const ChatMessagesСache = {
         } else {
             this.messages[chat_id] = this.messages[chat_id].concat(messages);
         }
-        
     },
-    deleteChatMessages(){}
+    deleteChatMessages() {}
 }
 
 export default ChatMessagesСache

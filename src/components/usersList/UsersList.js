@@ -4,21 +4,23 @@ import UsersItem from  './UsersItem';
 
 import styles from './UsersList.module.css';
 
-const UsersList = (props)  => { 
+const UsersList = (props)  => {
     let users;
-    if (props.items === undefined){
+    if (props.items === undefined) {
         users = null;
     } else {
         users = props.items.map((user, index) => {
-        return <UsersItem delFromBlackList = {props.delFromBlackList}
-                         key = {index} {...user} />
+            return <UsersItem
+                delFromBlackList = {props.delFromBlackList}
+                key = {index} {...user}
+            />
         });
     }
 
     return (
         <div className = {styles.Container}>
             <div className = {styles.Header}>
-                {/*<img src = '#' className = {styles.Img} alt = "#"/>*/}
+                {/*<img src = '#' className = {styles.Img} alt = '#'/>*/}
                 <h3 className = {styles.Title}>
                     {props.title}
                 </h3>

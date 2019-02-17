@@ -4,22 +4,22 @@ import { Link } from 'react-router-dom';
 import styles from './GroupProfile.module.css';
 
 
-const GroupProfile = (props)  => {
-	return (
-		<div className = {styles.Profile} id = {props.id}>
+const GroupProfile = (props) => {
+    return (
+    	<div className = {styles.Profile} id = {props.id}>
 
-			<div className = {styles.Header}>
-				<div>
-					<img src = 'http://iconnectites.com/images/website-development.png' className = {styles.HeaderAvatar} alt = "group_icon"/>
-				</div>
+    		<div className = {styles.Header}>
+    			<div>
+    				<img src = 'http://iconnectites.com/images/website-development.png' className = {styles.HeaderAvatar} alt = 'group_icon'/>
+    			</div>
 
-				<p className = {styles.HeaderText}>
-					Групповой профиль
-				</p>
+    			<p className = {styles.HeaderText}>
+    				Групповой профиль
+    			</p>
 
-				<div className = {styles.GroupInfo}>
-	            	<h2 className = {styles.GroupName}>
-	            		{props.profile.name}
+    			<div className = {styles.GroupInfo}>
+                	<h2 className = {styles.GroupName}>
+                		{props.profile.name}
 	            	</h2>
 
 	            	{/*<button className = {styles.Edit}>
@@ -34,11 +34,11 @@ const GroupProfile = (props)  => {
 		        </span>
 
 		        <div className = {styles.StatusAbout}>
-		            <label for = 'about' className = {styles.StatusAboutAdd}>Описание: </label>
+		             <label htmlFor = 'about' className = {styles.StatusAboutAdd}>Описание: </label>
 		            <input type = 'text' className = {styles.StatusAboutText} id = 'about'/>
 		            <button className = {styles.Edit}>
-                        <div className = {styles.EditIcon}> </div>
-					</button>
+						 <div className = {styles.EditIcon}/>
+					 </button>
 		        </div>
 
 		        <p className = {styles.StatusText}>
@@ -46,25 +46,25 @@ const GroupProfile = (props)  => {
 		        </p>
 		    </div>
 
-			<ul className = {styles.GroupMenu}>
-		        <li className = {styles.GroupMenuItems}>
-			        <Link to = '/'>
-			            <button className = {styles.ItemBtn}>
-                            <div className = {styles.GroupMenuIcon + ' ' + styles.GroupMenuIconMembers}> </div>
-			                Участники
-			            </button>
-			        </Link>
-		        </li>
-		        <li className = {styles.GroupMenuItems+' '+styles.GroupMenuItemsNotification}>
-		            <button className = {styles.ItemBtn}>
-                        <div className = {styles.GroupMenuIcon + ' ' + styles.GroupMenuIconBell}> </div>
-		                Оповещения
-		            </button>
-		             <div className = {styles.ToggleSwitch}>
-		                <input type = 'checkbox' className = {styles.Switch} id = 'switch'/>
-		                <label for = 'switch' className = {styles.SwitchLine}> </label>
-		            </div>
-		        </li>
+			 <ul className = {styles.GroupMenu}>
+				 <li className = {styles.GroupMenuItems}>
+				 	 <Link to = '/'>
+				 		 <button className = {styles.ItemBtn}>
+				 			 <div className = {styles.GroupMenuIcon + ' ' + styles.GroupMenuIconMembers}/>
+							 Участники
+				 		 </button>
+			 		 </Link>
+			 	</li>
+			 	<li className = {styles.GroupMenuItems + ' ' + styles.GroupMenuItemsNotification}>
+		 	 		 <button className = {styles.ItemBtn}>
+					 	 <div className = {styles.GroupMenuIcon + ' ' + styles.GroupMenuIconBell}/>
+						 Оповещения
+			 		 </button>
+					 <div className = {styles.ToggleSwitch}>
+			 			 <input type = 'checkbox' className = {styles.Switch} id = 'switch'/>
+		 				 <label htmlFor = 'switch' className = {styles.SwitchLine}/>
+				 	</div>
+				 </li>
 		        {/*<li className = {styles.GroupMenuItems}>
 			        <Link to = '/'>
 			            <button className = {styles.ItemBtn}>
@@ -89,38 +89,36 @@ const GroupProfile = (props)  => {
                         </button>
                     </Link>
                 </li>*/}
-                <li className = {styles.GroupMenuItems}>
-		            <button className = {styles.ItemBtn}
-		            		onClick = {() => {props.getInviteCode()}}>
-		                Получить инвайт
-		            </button>
-		            <div className= {styles.Invite}>
-		            	{ props.invitation_link }
-		            </div>
-		        </li>
+				 <li className = {styles.GroupMenuItems}>
+			 		 <button className = {styles.ItemBtn}
+			 				onClick = {() => {props.getInviteCode()}}>
+						Получить инвайт
+			 		 </button>
+			 		 <div className= {styles.Invite}>
+			 			{ props.invitation_link }
+			 		 </div>
+			 	</li>
 
-		        <li className = {styles.GroupMenuItems}>
-			        <Link to = '/'>
-			            <button className = {styles.ItemBtn + ' ' + styles.ItemBtnRed}>
-                            <div className = {styles.GroupMenuIcon + ' ' + styles.GroupMenuIconRed}> </div>
-			                Удалить пользователя
-			            </button>
-			        </Link>
-		        </li>
+			 	<li className = {styles.GroupMenuItems}>
+				 	<Link to = '/'>
+					 	<button className = {styles.ItemBtn + ' ' + styles.ItemBtnRed}>
+					 		<div className = {styles.GroupMenuIcon + ' ' + styles.GroupMenuIconRed}/>
+							Удалить пользователя
+					 	</button>
+					 </Link>
+				 </li>
 		    </ul>
 
-		    <div className = {styles.CloseProfile}>
-			        <button className = {styles.CloseBtn}
-			        		onClick = {() => {props.profileToggle()}}>
-						Закрыть
-			        </button>
-		    </div>
-
+		     <div className = {styles.CloseProfile}>
+				 <button
+					 className = {styles.CloseBtn}
+					 onClick = {() => {props.profileToggle()}}
+				 >
+					Закрыть
+				 </button>
+			 </div>
         </div>
-	)
+	 )
 }
 
-
-export default GroupProfile;
-
-
+export default GroupProfile

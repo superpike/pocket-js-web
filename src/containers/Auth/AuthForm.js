@@ -10,4 +10,4 @@ const authForm = () => {
     );
 }
 
-export default authForm;
+export default authForm

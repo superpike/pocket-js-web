@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 import Input from '../../../components/UI/Input/Input';
 import ContactItem from '../Item/ContactItem';
@@ -8,22 +8,24 @@ import classes from './ContactSearch.module.css';
 class SearchGroup extends Component {
     state = {
         searchString: '',
-        contacts:[]
+        contacts: []
     }
 
     onChangeSearchHandler = (event) => {
-        this.setState({searchString: event.target.value});
+        this.setState({ searchString: event.target.value });
     }
 
     onClickSearchHandler = () => {
-        this.setState({contacts:[
-            {id:1,name:'Первый 1'},
-            {id:5,name:'Земля'},
-            {id:4,name:'Орел'},
-            {id:7,name:'Связной'},
-            {id:56,name:'Язык'},
-            {id:123,name:'Не отвечать'},
-        ]});
+        this.setState({
+            contacts:[
+                { id: 1, name: 'Первый 1' },
+                { id: 5, name: 'Земля' },
+                { id: 4, name: 'Орел' },
+                { id: 7, name: 'Связной' },
+                { id: 56, name: 'Язык' },
+                { id: 123, name: 'Не отвечать' },
+            ]
+        });
     }
 
     render() {
@@ -35,7 +37,7 @@ class SearchGroup extends Component {
             });
         }
 
-        return(
+        return (
             <>
                 <div className={classes.SearchPanel}>
                     <Input
@@ -59,7 +61,7 @@ class SearchGroup extends Component {
                         Найти
                     </button>
                     <button className={classes.Button} onClick={this.props.closeForm}>
-                        <i className="fas fa-times"></i>
+                        <i className='fas fa-times'/>
                     </button>
                 </div>
             </>

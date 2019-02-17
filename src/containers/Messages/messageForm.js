@@ -38,7 +38,7 @@ class MessageForm extends Component {
             this.props.dispatch(getMessages(this.state.id));
         }
 
-        let messageList = document.getElementById("messageList");
+        const messageList = document.getElementById('messageList');
         messageList.scrollTop = messageList.scrollHeight;
     }
 
@@ -49,7 +49,7 @@ class MessageForm extends Component {
     }
 
     profileToggle = () => {
-        let sidebarProfile = document.getElementById('Profile'); //чтобы профиль не открывался дважды
+        const sidebarProfile = document.getElementById('Profile'); //чтобы профиль не открывался дважды
         if (sidebarProfile === null) {
             this.setState({
                 profile: !this.state.profile
@@ -58,8 +58,8 @@ class MessageForm extends Component {
     }
 
     sendMessage = (text) => {
-         console.log(this.state.id);
-        let timestamp = new Date();
+        console.log(this.state.id);
+        const timestamp = new Date();
         this.props.dispatch(addMessage({
             receiver: 55,
             message: text,
@@ -67,14 +67,13 @@ class MessageForm extends Component {
             author: 'Вы',
             timestamp: timestamp.getTime(),
         }));
-        this.props.dispatch(sendWS(text,this.state.id));
+        this.props.dispatch(sendWS(text, this.state.id));
     }
 
     render() {
-
         //меню в шапке
         //пункты для меню группы
-        let groupsMenu = [
+        const groupsMenu = [
             {
                 href: `/chats/${this.props.id}`,
                 icon: ' fas fa-users',
@@ -107,7 +106,7 @@ class MessageForm extends Component {
             }
         ];
         //пункты для меню контакта
-        let contactsMenu = [
+        const contactsMenu = [
             {
                 href: `/contacts/${this.props.id}`,
                 icon: ' fas fa-user',
@@ -141,8 +140,11 @@ class MessageForm extends Component {
         ];
 
         //информация о чате в шапке поля сообщений
-        let chatImg, chatName, chatTitle, chatInfo,
-            chatData = {}; //данные для открытия профиля через меню в шапке сообщений
+        let chatImg;
+        let chatName;
+        let chatTitle;
+        let chatInfo;
+        let chatData = {}; //данные для открытия профиля через меню в шапке сообщений
 
         //ищем по id в списке чатов в сторе
         if (this.state.id !== undefined) {
@@ -171,7 +173,7 @@ class MessageForm extends Component {
         }
         //меню в шапке сообщений
         //меню для группы/контакта
-        let menuItems = (this.props.active === 1) ? groupsMenu : contactsMenu;
+        const menuItems = (this.props.active === 1) ? groupsMenu : contactsMenu;
         //показываем/скрываем меню (state по клику)
         const menu = this.state.menu ? (
             <div>
@@ -185,12 +187,12 @@ class MessageForm extends Component {
         ) : null;
 
         //профиль группы/контакта (открывается из меню)
-        let profileType = (this.props.active === 1) ?
+        const profileType = (this.props.active === 1) ?
             <GroupProfile profile={chatData} profileToggle={this.profileToggle} />
             :
             <ProfileUser profile={chatData} profileToggle={this.profileToggle} />
 
-        let profile = this.state.profile ? (
+        const profile = this.state.profile ? (
             <>
                 <Modal classesNames='Profile ProfileFromMenu'>
                     {profileType}
@@ -198,7 +200,7 @@ class MessageForm extends Component {
             </>
         ) : null;
 
-        let daysWithMessages = [];
+        const daysWithMessages = [];
         for (const key in this.props.messages) {
             daysWithMessages.push(<MessageListToday key={key} day={key} messages={this.props.messages[key]} />);
         }
@@ -212,14 +214,15 @@ class MessageForm extends Component {
                                 className={(chatName !== undefined || this.state.id === undefined) ? //картинки нет при открытии приложения и при выборе контакта
                                     classes.ChatImgNone :
                                     classes.ChatImg}
-                                alt="group_icon" />
+                                alt='group_icon' />
                         </div>
                         <h2 className={classes.ChatTitle}>{chatTitle}</h2>
                     </div>
                     <div className={classes.Users} />
-                    <div className={(this.props.id === undefined) ?
-                        classes.MenuNone : //скрываем меню, если ни контакт, ни группа не выбраны
-                        classes.Menu}
+                    <div
+                        className={(this.props.id === undefined) ?
+                            classes.MenuNone : //скрываем меню, если ни контакт, ни группа не выбраны
+                            classes.Menu}
                         onClick={this.menuToggle}>
                         <i className={classes.MenuIcon + ' fas fa-ellipsis-v'} />
                     </div>

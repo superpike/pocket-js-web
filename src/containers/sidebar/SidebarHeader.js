@@ -13,263 +13,260 @@ import { getUsers, addContact, getBlackList, delFromBlackList } from '../../stor
 import classes from './SidebarHeader.module.css';
 
 class SidebarHeader extends Component {
-	state = {
-		menu: false,
-		modal: null,
-		blackList: false,
-		blacklistItems: [],
-		active: 0,
-		userslist: false, //для обнуления списка при закрытии окна поиска
-		user: null
-	}
+    state = {
+        menu: false,
+        modal: null,
+        blackList: false,
+        blacklistItems: [],
+        active: 0,
+        userslist: false, //для обнуления списка при закрытии окна поиска
+        user: null
+    }
 
-	static getDerivedStateFromProps(nextProps, prevState) {
-		if (nextProps.user !== prevState.user || nextProps.blacklist !== prevState.blacklistItems) {
-			return {
-				user: nextProps.user,
-				blacklistItems: nextProps.blacklist
-			}
-		}
-		//если состояние не изменилось
-		return null;
-	}
+    static getDerivedStateFromProps(nextProps, prevState) {
+        if (nextProps.user !== prevState.user || nextProps.blacklist !== prevState.blacklistItems) {
+            return {
+                user: nextProps.user,
+                blacklistItems: nextProps.blacklist
+            }
+        }
+        //если состояние не изменилось
+        return null;
+    }
 
-	menuToggle = () => {
-		this.setState({
-			menu: !this.state.menu
-		});
-	}
+    menuToggle = () => {
+        this.setState({
+            menu: !this.state.menu
+        });
+    }
 
-	searchShow = () => {
-		this.setState({
-			modal: 1
-		});
-	}
+    searchShow = () => {
+        this.setState({
+            modal: 1
+        });
+    }
 
-	searchHide = () => {
-		this.setState({
-			userslist: false, //для обнуления списка
-			modal: 0
-		});
-		//обнуление input при выходе из окна поиска
-		document.getElementById('Search').value = '';
-	}
+    searchHide = () => {
+        this.setState({
+            userslist: false, //для обнуления списка
+            modal: 0
+        });
+        //обнуление input при выходе из окна поиска
+        document.getElementById('Search').value = '';
+    }
 
-	//поиск при нажатии 'Enter'
-	enterSearch = (event) => {
-		this.setState({ userslist: true });
-		if (event.key === 'Enter') {
-			this.props.dispatch(getUsers(event.target.value));
-		}
-	}
+    //поиск при нажатии 'Enter'
+    enterSearch = (event) => {
+        this.setState({ userslist: true });
+        if (event.key === 'Enter') {
+            this.props.dispatch(getUsers(event.target.value));
+        }
+    }
 
-	//поиск при клике по лупе
-	clickSearch = () => {
-		this.setState({ userslist: true });
-		let value = document.getElementById('Search').value;
-		this.props.dispatch(getUsers(value));
-	}
+    //поиск при клике по лупе
+    clickSearch = () => {
+        this.setState({ userslist: true });
+        const value = document.getElementById('Search').value;
+        this.props.dispatch(getUsers(value));
+    }
 
-	openProfile = (data) => {
-		this.setState({
-			modal: 2,
-			menu: false,
-			user: data
-		});
-	}
+    openProfile = (data) => {
+        this.setState({
+            modal: 2,
+            menu: false,
+            user: data
+        });
+    }
 
-	updateData = (id) => {
-		// //добавляем имя для последующего добавления в общий список;
-		// this.setState({ addItem: name });//для заглушки
+    updateData = (id) => {
+        // //добавляем имя для последующего добавления в общий список;
+        // this.setState({ addItem: name });//для заглушки
 
-		//id для последующего добавления
-		this.setState({ active: id });
-	}
+        //id для последующего добавления
+        this.setState({ active: id });
+    }
 
-	//добавление контакта в общий список
-	addContact = () => {
-		this.props.dispatch(addContact(this.state.active));
-	}
+	    //добавление контакта в общий список
+    addContact = () => {
+        this.props.dispatch(addContact(this.state.active));
+    }
 
-	//черный список 
-	usersListToggle = () => {
-		if (this.state.blackList === false) {
-			this.props.dispatch(getBlackList());
-		}
-		this.setState({
-			blackList: !this.state.blackList
-		});
-	}
+	    //черный список
+    usersListToggle = () => {
+        if (this.state.blackList === false) {
+            this.props.dispatch(getBlackList());
+        }
+        this.setState({
+            blackList: !this.state.blackList
+        });
+    }
 
-	delFromBlackList = (id) => {
-		this.props.dispatch(delFromBlackList(id));
-	}
+    delFromBlackList = (id) => {
+        this.props.dispatch(delFromBlackList(id));
+    }
 
-	switchComponent = () => {
-		switch (this.state.modal) {
-			//выход
-			case 0:
-				return null;
-				break;
+    switchComponent = () => {
+        switch (this.state.modal) {
+            //выход
+            case 0:
+                return null;
 
-			//окно поиска контакта
-			case 1:
-				let user = (this.state.user.id !== undefined && this.state.userslist) ? (
-					<SearchList
-						updateData={this.updateData}
-						openProfile={this.openProfile}
+            //окно поиска контакта
+            case 1:
+                const user = (this.state.user.id !== undefined && this.state.userslist) ? (
+                    <SearchList
+                        updateData={this.updateData}
+                        openProfile={this.openProfile}
 
-						user={this.state.user}
-						userEmail={this.props.userEmail}
-						active={this.state.active} />
-				) : null;
+                        user={this.state.user}
+                        userEmail={this.props.userEmail}
+                        active={this.state.active} />
+                ) : null;
 
-				return (
-					<Modal classesNames='SearchContacts'>
-						<div className={classes.List}>
-							{user}
-						</div>
+                return (
+                    <Modal classesNames='SearchContacts'>
+                        <div className={classes.List}>
+                            {user}
+                        </div>
 
-						<div className={classes.ButtonsBlock}>
-							<button onClick={this.addContact} className={classes.Button}>
-								<div>
-									<i className={classes.ButtonIcon + ' fas fa-check'} />
-								</div>
-								<div className={classes.ButtonText}>
-									Пригласить
-				                    </div>
-							</button>
-							<button onClick={this.searchHide} className={classes.Button}>
-								<div>
-									<i className={classes.ButtonIcon + ' fas fa-times'} />
-								</div>
-								<div className={classes.ButtonText}>
-									Отменить
-				                    </div>
-							</button>
-						</div>
-					</Modal>
-				);
-				break;
+                        <div className={classes.ButtonsBlock}>
+                            <button onClick={this.addContact} className={classes.Button}>
+                                <div>
+                                    <i className={classes.ButtonIcon + ' fas fa-check'} />
+                                </div>
+                                <div className={classes.ButtonText}>
+                                    Пригласить
+                                </div>
+                            </button>
+                            <button onClick={this.searchHide} className={classes.Button}>
+                                <div>
+                                    <i className={classes.ButtonIcon + ' fas fa-times'} />
+                                </div>
+                                <div className={classes.ButtonText}>
+                                    Отменить
+                                </div>
+                            </button>
+                        </div>
+                    </Modal>
+                );
 
-			//окно профиля
-			case 2:
-				return (
-					<Modal classesNames='SearchContacts'>
-						<User user={this.state.user}
-							addContact={this.addContact}
-							searchShow={this.searchShow}
-						/>
-					</Modal>
-				);
-				break;
+            //окно профиля
+            case 2:
+                return (
+                    <Modal classesNames='SearchContacts'>
+                        <User user={this.state.user}
+                            addContact={this.addContact}
+                            searchShow={this.searchShow}
+                        />
+                    </Modal>
+                );
 
-			default:
-				console.log(this.state.active);
-				break;
-		}
-	}
+            default:
+                console.log(this.state.active);
+                return null;
+        }
+    }
 
-	closeMenu = () => {
-		this.setState({
-			menu: false,
-		});
-	}
+    closeMenu = () => {
+        this.setState({
+            menu: false,
+        });
+    }
 
-	render() {
-		// компоненты главного меню
-		let menuItems = [
-			{
-				href: '/account',
-				icon: ' fas fa-user',
-				text: 'Личный кабинет',
-				action: ''
-			},
-			{
-				href: '/profile',
-				icon: ' fas fa-user',
-				text: 'Профиль',
-				action: ''
-			},
-			{
-				href: '/auth',
-				icon: ' fas fa-user-times',
-				text: 'Выйти',
-				action: 'logout'
-			},
-			{
-				href: null,
-				icon: ' fas fa-user-slash',
-				text: 'Черный список',
-				action: 'usersListToggle'
-			}
-		];
+    render() {
+        // компоненты главного меню
+        const menuItems = [
+            {
+                href: '/account',
+                icon: ' fas fa-user',
+                text: 'Личный кабинет',
+                action: ''
+            },
+            {
+                href: '/profile',
+                icon: ' fas fa-user',
+                text: 'Профиль',
+                action: ''
+            },
+            {
+                href: '/auth',
+                icon: ' fas fa-user-times',
+                text: 'Выйти',
+                action: 'logout'
+            },
+            {
+                href: null,
+                icon: ' fas fa-user-slash',
+                text: 'Черный список',
+                action: 'usersListToggle'
+            }
+        ];
 
-		// главное меню
-		const menu = this.state.menu ? (
-			<>
-				<Backdrop show classesNames='MainMenu' />
-				<Modal classesNames='MainMenu'>
-					<MenuList
-						menuToggle={this.menuToggle}
-						items={menuItems}
-						closeMenu={this.closeMenu}
-						usersListToggle={this.usersListToggle}
-					/>
-				</Modal>
-			</>
-		) : null;
+        // главное меню
+        const menu = this.state.menu ? (
+            <>
+                <Backdrop show classesNames='MainMenu' />
+                <Modal classesNames='MainMenu'>
+                    <MenuList
+                        menuToggle={this.menuToggle}
+                        items={menuItems}
+                        closeMenu={this.closeMenu}
+                        usersListToggle={this.usersListToggle}
+                    />
+                </Modal>
+            </>
+        ) : null;
 
-		// черный список
-		const blacklist = this.state.blackList ? (
-			<Modal classesNames='UsersList'>
-				<UsersList usersListToggle={this.usersListToggle}
-					delFromBlackList={this.delFromBlackList}
-					title='Чёрный список'
-					items={this.state.blacklistItems} />
-			</Modal>
-		) : null;
+        // черный список
+        const blacklist = this.state.blackList ? (
+            <Modal classesNames='UsersList'>
+                <UsersList usersListToggle={this.usersListToggle}
+                    delFromBlackList={this.delFromBlackList}
+                    title='Чёрный список'
+                    items={this.state.blacklistItems} />
+            </Modal>
+        ) : null;
 
-		return (
-			<div className={classes.Menu}>
-				{/*иконка меню - гамбургер*/}
-				<div onClick={this.menuToggle} className={classes.Burger}>
-					{/*<span className = {classes.BurgerLine}/>*/}
-					<i className={classes.BurgerIcon + ' fas fa-bars'} />
-				</div>
+        return (
+            <div className={classes.Menu}>
+                {/*иконка меню - гамбургер*/}
+                <div onClick={this.menuToggle} className={classes.Burger}>
+                    {/*<span className = {classes.BurgerLine}/>*/}
+                    <i className={classes.BurgerIcon + ' fas fa-bars'} />
+                </div>
 
-				{/*поиск контактов*/}
-				<div className={classes.Search}>
-					<input
-						placeholder='Найти...'
-						type='text'
-						className={classes.SearchInput}
-						id='Search'
-						onClick={this.searchShow}
-						onKeyPress={this.enterSearch}
-					/>
-					<i className={classes.SearchIcon + ' fas fa-search'}
-						onClick={this.clickSearch} />
-				</div>
+                {/*поиск контактов*/}
+                <div className={classes.Search}>
+                    <input
+                        placeholder='Найти...'
+                        type='text'
+                        className={classes.SearchInput}
+                        id='Search'
+                        onClick={this.searchShow}
+                        onKeyPress={this.enterSearch}
+                    />
+                    <i className={classes.SearchIcon + ' fas fa-search'}
+                        onClick={this.clickSearch} />
+                </div>
 
-				{/*окно найденных контактов, профиль пользователя*/}
-				{this.switchComponent()}
-				{/*главное меню*/}
-				{menu}
-				{/*черный список*/}
-				{blacklist}
-			</div>
-		);
-	}
+                {/*окно найденных контактов, профиль пользователя*/}
+                {this.switchComponent()}
+                {/*главное меню*/}
+                {menu}
+                {/*черный список*/}
+                {blacklist}
+            </div>
+        );
+    }
 }
 
 function mapStateToProps(store) {
-	return {
-		user: store.users.users,
-		userEmail: store.users.userEmail,
-		blacklist: store.contacts.blacklist,
-		is_loading_users: store.users.is_loading,
-	}
+    return {
+        user: store.users.users,
+        userEmail: store.users.userEmail,
+        blacklist: store.contacts.blacklist,
+        is_loading_users: store.users.is_loading,
+    }
 }
 
 export default connect(mapStateToProps)(SidebarHeader);

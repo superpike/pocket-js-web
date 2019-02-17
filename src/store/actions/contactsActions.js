@@ -1,7 +1,7 @@
-import { GET_CONTACTS, ADD_CONTACT, ADD_TO_BLACKLIST, GET_BLACKLIST, DEL_FROM_BLACKLIST } from "../constants";
+import { GET_CONTACTS, ADD_CONTACT, ADD_TO_BLACKLIST, GET_BLACKLIST, DEL_FROM_BLACKLIST } from '../constants';
 import instance from '../axios-docs';
 
-//import ContactsAPI from '../reducers/contactsStub' 
+//import ContactsAPI from '../reducers/contactsStub'
 
 export function getContacts() {
     return {

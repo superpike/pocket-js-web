@@ -1,19 +1,17 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import styles from './ChatsItem.module.css';
-
-
 
 const ChatsItem = (props)  => {
     return (
         <div className = {styles.Block} onClick = {() => props.handleClicks(props.id)}>
             <NavLink to = {`/chats/${props.id}`}>
-                <div className = {styles.Item}>               
+                <div className = {styles.Item}>
                     <div className = {styles.Img}>
-                        <img src = {props.img} className = {styles.Icon} alt = "group_icon"/>
+                        <img src = {props.img} className = {styles.Icon} alt = 'group_icon'/>
                     </div>
-                    
+
                     <div className = {styles.Chat}>
                         <div className = {styles.Title}>
                             {props.name}

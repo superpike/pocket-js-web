@@ -1,4 +1,4 @@
-import {GET_ACCOUNT, EDIT_ACCOUNT} from "../constants";
+import { GET_ACCOUNT, EDIT_ACCOUNT } from '../constants';
 import instance from '../axios-docs';
 
 
@@ -12,6 +12,6 @@ export function getAccount() {
 export function editAccount(oldPassword, newPassword) {
     return {
         type: EDIT_ACCOUNT,
-        payload: instance.put('/account/', {oldPassword, newPassword})
+        payload: instance.put('/account/', { oldPassword, newPassword })
     };
 }

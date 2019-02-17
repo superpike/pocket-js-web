@@ -1,39 +1,34 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
-
+import { NavLink } from 'react-router-dom';
 import styles from './ContactsItem.module.css';
-
-import {setActiveChat} from '../../../store/actions/index';
-
-import {connect} from 'react-redux';
+import { setActiveChat } from '../../../store/actions/index';
+import { connect } from 'react-redux';
 
 class ContactsItem extends React.Component {
-    componentWillMount(){
-        this.clickTimeout = null
-    }
+    clickTimeout = null
 
     handleClicks = () => {
         //двойной клик - открывает профиль
-        if (this.clickTimeout !== null) { 
-            this.props.profileToggle(this.props); 
+        if (this.clickTimeout !== null) {
+            this.props.profileToggle(this.props);
 
             clearTimeout(this.clickTimeout);
             this.clickTimeout = null;
         } else {
         //одиночный клик - передает активный чат
-            this.props.dispatch(setActiveChat(this.props.id, 2));  
+            this.props.dispatch(setActiveChat(this.props.id, 2));
             this.clickTimeout = setTimeout(() => {
                 clearTimeout(this.clickTimeout)
                 this.clickTimeout = null
-                }, 2000)
+            }, 2000)
         }
     }
-    render(){
+    render() {
         return (
             <div className={styles.Block} onClick = {this.handleClicks}>
                 <NavLink className={styles.Item} to={`/contacts/${this.props.id}`}>
                     <div className={styles.Img}>
-                        <img src = {this.props.img} className = {styles.Icon} alt = "contact_icon"/>
+                        <img src = {this.props.img} className = {styles.Icon} alt = 'contact_icon'/>
                     </div>
                     <div className={styles.Contact}>
                         <div className={styles.Name}>
@@ -48,7 +43,7 @@ class ContactsItem extends React.Component {
                     </div>
                     <div className={styles.Mark}>
                         {/*this.props.mark*/}
-                    </div>                
+                    </div>
                 </NavLink>
             </div>
         );

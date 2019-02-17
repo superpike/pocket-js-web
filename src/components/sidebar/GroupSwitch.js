@@ -6,10 +6,10 @@ import Chats from '../../containers/sidebar/chats/Chats'
 
 
 const GroupSwitch = () => (
-	<Switch>
-		<Route exact path='/chats' component={Chats}/>
-		<Route path='/chats/:id' component={Chats}/>
-	</Switch>
+	 <Switch>
+		 <Route exact path='/chats' component={Chats}/>
+		 <Route path='/chats/:id' component={Chats}/>
+	 </Switch>
 )
 
 

@@ -33,9 +33,9 @@ const middleware = store => next => action => {
 
         default:
             break;
-    };
+    }
 
     return next(action);
 };
 
-export default middleware;
+export default middleware

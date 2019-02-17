@@ -10,4 +10,4 @@ const groupItem = (props) => {
     );
 }
 
-export default groupItem;
+export default groupItem

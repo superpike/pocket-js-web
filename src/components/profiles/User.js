@@ -7,17 +7,17 @@ const User = (props) => {
         <div className = {styles.Profile}>
             <div className = {styles.Header}>
                 <div className = {styles.User}>
-                    <img src = {props.user.img} 
+                    <img src = {props.user.img}
                         alt = 'user'
                         className = {styles.Avatar}
                     />
                     <div className = {styles.Title}>Профиль</div>
-                </div>          	
+                </div>
             </div>
         	<div className = {styles.Email}>{props.user.email}</div>
         	<div className = {styles.Name}>{props.user.name}</div>
             <div className  =  {props.user.status ?
-                styles.OnLine : 
+                styles.OnLine :
                 styles.OffLine}>
                 online
             </div>
@@ -33,8 +33,9 @@ const User = (props) => {
             </div>
 
             <div className = {styles.ButtonsBlock}>
-                <button className = {styles.Button}
-                        onClick = {() => {props.addContact()}}
+                <button
+                    className = {styles.Button}
+                    onClick = {() => {props.addContact()}}
                 >
                     <div>
                         <i className = {styles.ButtonIcon + ' fas fa-check'}/>
@@ -44,8 +45,9 @@ const User = (props) => {
                     </div>
                 </button>
 
-                <button className = {styles.Button}
-                        onClick = {() => {props.searchShow()}}
+                <button
+                    className = {styles.Button}
+                    onClick = {() => {props.searchShow()}}
                 >
                     <div>
                         <i className = {styles.ButtonIcon + ' fas fa-times'}/>
@@ -59,4 +61,4 @@ const User = (props) => {
     );
 }
 
-export default User;
+export default User

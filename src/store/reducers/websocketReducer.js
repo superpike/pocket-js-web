@@ -8,7 +8,7 @@ const initialState = {
  * A reducer to handle WebSocket messages.
  * NB: There is no error handling!
  */
-export function websocketReducer (state = initialState, action) {
+export function websocketReducer(state = initialState, action) {
     switch (action.type) {
         case Constants.WEBSOCKET_MESSAGE:
             const data = action.payload.data;

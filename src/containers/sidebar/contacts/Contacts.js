@@ -1,49 +1,38 @@
-
 import React from 'react';
-
 import ContactsList from './ContactsList';
 import Spinner from '../../../components/UI/Spinner/Spinner';
-
-import {getContacts, addToBlackList} from '../../../store/actions';
-
-import {connect} from 'react-redux';
+import { getContacts, addToBlackList } from '../../../store/actions';
+import { connect } from 'react-redux';
 
 class Contacts extends React.Component {
-	componentDidMount()
-    {
+    componentDidMount() {
         this.props.dispatch(getContacts());
         // this.props.dispatch(getContacts(localStorage.getItem('token')));
-	}
+    }
 
     addToBlackList = (id) => {
         // console.log(id);
         this.props.dispatch(addToBlackList(id));
     }
 
-	render() {
-		if(this.props.is_loading_contacts){
+    render() {
+        if (this.props.is_loading_contacts) {
             return <Spinner />
         }
-        
+
         return (
             <ContactsList contacts = {this.props.contacts}
-                        addToBlackList = {this.addToBlackList}/>
+                addToBlackList = {this.addToBlackList}/>
         );
-
     }
 }
 
 function mapStateToProps(store) {
     return {
         contacts: store.contacts.contacts,
-		is_loading_contacts: store.contacts.is_loading,
+        is_loading_contacts: store.contacts.is_loading,
     }
 }
 
 
 export default connect(mapStateToProps)(Contacts);
-
-
-
-
-

@@ -19,7 +19,7 @@ const Input = ( props ) => {
         labelClasses = props.labelClass.split(' ').map(el => classes[el]);
         labelClasses.push(classes.Label);
     }
-    
+
     let elementClasses = []
     if (props.elementClass) {
         elementClasses = props.elementClass.split(' ').map(el => classes[el]);
@@ -35,7 +35,7 @@ const Input = ( props ) => {
         //         onKeyDown={(event) => props.changed(event,props.inputId)} />;
         //     break;
         case ( 'input' ):
-            inputElement = <input 
+            inputElement = <input
                 type={props.inputType}
                 className={inputClasses.join(' ')}
                 {...props.elementConfig}
@@ -43,7 +43,7 @@ const Input = ( props ) => {
                 onChange={props.changed} />;
             break;
         case ( 'search' ):
-            inputElement = <input 
+            inputElement = <input
                 type={props.inputType}
                 className={inputClasses.join(' ')}
                 {...props.elementConfig}
@@ -85,7 +85,6 @@ const Input = ( props ) => {
             {inputElement}
         </div>
     );
+}
 
-};
-
-export default Input;
+export default Input

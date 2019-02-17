@@ -12,32 +12,26 @@ const initialState = {
 export function usersReducer(state = initialState, action) {
     switch (action.type) {
         case Constants.GET_USERS_PENDING: {
-            state = {...state, is_loading_users: true};
-        break;
+            return { ...state, is_loading_users: true };
         }
-
         case Constants.GET_USERS_FULFILLED: {
-            let request = action.payload.request.responseURL;
-            let email = request.match( /(?<=email=)(.*)/g );
-            state = {
+            const request = action.payload.request.responseURL;
+            const email = request.match( /(?<=email=)(.*)/g );
+            return {
                 ...state,
                 is_loading_users: false,
                 users: action.payload.data,
                 userEmail: email
             };
-        break;
         }
-
         case Constants.GET_USERS_REJECTED: {
-            state = {
+            return {
                 ...state,
                 //users, //for testing
                 is_loading_users: false,
-                error_message: action.payload.message};
-        break;
+                error_message: action.payload.message };
         }
-        
-        default: {state = {...state}}
+        default:
+            return state;
     }
-    return state;
 }
