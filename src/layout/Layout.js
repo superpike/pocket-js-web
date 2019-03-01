@@ -10,7 +10,7 @@ class Layout extends Component
 {
     render(){
 
-        if (this.props.token !== null) {
+        if (this.props.token === null) {
             return (
                 <Switch>
                     <Route path="/auth" component={AuthForm}/>
