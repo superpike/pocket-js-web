@@ -1,5 +1,7 @@
-import {GET_CONTACTS, ADD_CONTACT, EDIT_CONTACT, DELETE_CONTACT,
-ADD_TO_BLACKLIST, GET_BLACKLIST, DEL_FROM_BLACKLIST } from "../constants";
+import {
+	GET_CONTACTS, ADD_CONTACT, EDIT_CONTACT, DELETE_CONTACT,
+	ADD_TO_BLACKLIST, GET_BLACKLIST, DEL_FROM_BLACKLIST, CLEAR_TO_BLACKLIST
+} from '../constants';
 
 import instance from '../axios-docs';
 
@@ -36,6 +38,12 @@ export function addToBlackList(id) {
         type: ADD_TO_BLACKLIST,
         payload: instance.post('/account/blacklist', { user: id })
     };
+}
+
+export function clearToBlackList() {
+	return {
+		type: CLEAR_TO_BLACKLIST
+	};
 }
 
 export function getBlackList() {

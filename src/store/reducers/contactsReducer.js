@@ -5,7 +5,9 @@ import * as Constants from '../constants';
 
 const initialState = {
     contacts: [],
+	blacklist: null,
     activeContact: null,
+	error_message: null,
     is_loading_contacts: false
 }
 
@@ -77,6 +79,15 @@ export function contactsReducer(state = initialState, action) {
             };
             break;
         }
+
+		case Constants.CLEAR_TO_BLACKLIST: {
+			state = {
+				...state,
+				blacklist: null,
+				error_message: null
+			};
+			break;
+		}
 
         //Редактирование контакта
         case Constants.EDIT_CONTACT: {
