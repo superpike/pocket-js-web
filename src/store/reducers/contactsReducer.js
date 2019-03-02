@@ -6,6 +6,7 @@ import * as Constants from '../constants';
 const initialState = {
     contacts: [],
 	blacklist: null,
+	isShowBlackList: false,
     activeContact: null,
 	error_message: null,
     is_loading_contacts: false
@@ -79,12 +80,20 @@ export function contactsReducer(state = initialState, action) {
             };
             break;
         }
-
+		// Очистить "черный список"
 		case Constants.CLEAR_TO_BLACKLIST: {
 			state = {
 				...state,
 				blacklist: null,
 				error_message: null
+			};
+			break;
+		}
+		// Переключение видимости "черного списка"
+		case Constants.TOGGLE_SHOW_BLACK_LIST: {
+			state = {
+				...state,
+				isShowBlackList: !state.isShowBlackList
 			};
 			break;
 		}

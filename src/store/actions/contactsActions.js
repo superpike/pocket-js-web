@@ -1,6 +1,13 @@
 import {
-	GET_CONTACTS, ADD_CONTACT, EDIT_CONTACT, DELETE_CONTACT,
-	ADD_TO_BLACKLIST, GET_BLACKLIST, DEL_FROM_BLACKLIST, CLEAR_TO_BLACKLIST
+	GET_CONTACTS,
+    ADD_CONTACT,
+    EDIT_CONTACT,
+    DELETE_CONTACT,
+	ADD_TO_BLACKLIST,
+    GET_BLACKLIST,
+    DEL_FROM_BLACKLIST,
+    CLEAR_TO_BLACKLIST,
+    TOGGLE_SHOW_BLACK_LIST
 } from '../constants';
 
 import instance from '../axios-docs';
@@ -43,6 +50,12 @@ export function addToBlackList(id) {
 export function clearToBlackList() {
 	return {
 		type: CLEAR_TO_BLACKLIST
+	};
+}
+
+export function toggleShowBlackList() {
+	return {
+		type: TOGGLE_SHOW_BLACK_LIST
 	};
 }
 

@@ -8,11 +8,10 @@ import SearchList from './SearchList';
 import User from '../../components/profiles/User';
 import UsersList  from '../../components/usersList/UsersList';
 
-import { getUsers, addContact, getBlackList, delFromBlackList } from '../../store/actions';
+import { getUsers, addContact, toggleShowBlackList,  delFromBlackList } from '../../store/actions';
 
 import classes from './SidebarHeader.module.css';
 import styles from '../../components/menu/MenuItem.module.css';
-import blackListHOC from '../UsersBlackList/blackListHOC';
 
 // компоненты главного меню
 const menuItems = [
@@ -119,13 +118,7 @@ class SidebarHeader extends Component {
 
 	//черный список
 	usersListToggle = () => {
-		this.setState({
-			isBlackList: !this.state.isBlackList
-		});
-	};
-
-	delFromBlackList = (id) => {
-		this.props.dispatch(delFromBlackList(id));
+		this.props.dispatch(toggleShowBlackList());
 	};
 
 	switchComponent = () => {
@@ -209,16 +202,16 @@ class SidebarHeader extends Component {
 		</Fragment>
 	) : null;
 
-	renderBlackList = () => {
-		const BlackList = blackListHOC(UsersList);
-		return this.state.isBlackList ?
-			<BlackList
-				usersListToggle={this.usersListToggle}
-				onDeleteUser={this.delFromBlackList}
-				title='Чёрный список'
-			/>
-			: null
-	};
+	// renderBlackList = () => {
+	// 	const BlackList = blackListHOC(UsersList);
+	// 	return this.state.isBlackList ?
+	// 		<BlackList
+	// 			usersListToggle={this.usersListToggle}
+	// 			onDeleteUser={this.delFromBlackList}
+	// 			title='Чёрный список'
+	// 		/>
+	// 		: null
+	// };
 
 	renderSearchContacts = () =>
 		<div className={classes.Search}>
@@ -260,8 +253,6 @@ class SidebarHeader extends Component {
 				{this.switchComponent()}
 				{/*главное меню*/}
 				{this.renderMainMenu()}
-				{/*черный список*/}
-				{this.renderBlackList()}
 			</div>
 		);
 	}
