@@ -6,9 +6,8 @@ import Backdrop from '../../components/UI/Backdrop/Backdrop';
 import MenuList from '../../components/menu/MenuList';
 import SearchList from './SearchList';
 import User from '../../components/profiles/User';
-import UsersList  from '../../components/usersList/UsersList';
 
-import { getUsers, addContact, toggleShowBlackList,  delFromBlackList } from '../../store/actions';
+import { getUsers, addContact, toggleShowBlackList} from '../../store/actions';
 
 import classes from './SidebarHeader.module.css';
 import styles from '../../components/menu/MenuItem.module.css';
@@ -39,7 +38,6 @@ class SidebarHeader extends Component {
 	state = {
 		isMenu: false,
 		modal: null,
-		isBlackList: false,
 		active: 0,
 		userName: '',
 		isUsersList: false, //для обнуления списка при закрытии окна поиска
@@ -201,17 +199,6 @@ class SidebarHeader extends Component {
 			</Modal>
 		</Fragment>
 	) : null;
-
-	// renderBlackList = () => {
-	// 	const BlackList = blackListHOC(UsersList);
-	// 	return this.state.isBlackList ?
-	// 		<BlackList
-	// 			usersListToggle={this.usersListToggle}
-	// 			onDeleteUser={this.delFromBlackList}
-	// 			title='Чёрный список'
-	// 		/>
-	// 		: null
-	// };
 
 	renderSearchContacts = () =>
 		<div className={classes.Search}>
