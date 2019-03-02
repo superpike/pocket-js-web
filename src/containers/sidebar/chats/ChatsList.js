@@ -63,6 +63,29 @@ class ChatsList extends React.Component {
         }
     }
 
+    //Степашкин Виктор (пока код не рабочий, я его закомментировал, нужно мне еще время)
+    // funcClick1 = (id)=>{
+    //   this.props.dispatch(setActiveChat(id, 1));
+    // }
+
+    // funcClick2 = ()=> {
+    //   this.setState({modal: true});
+    // }
+
+    // handleClicks = (id) => {
+    //   let timer;
+    //   if(timer){
+    //     this.funcClick2;
+    //     clearTimeout(timer);
+    //     timer = 0;
+    //     return;
+    //   }
+    //   timer = setTimeout(function(){
+    //     this.funcClick1;
+    //     timer = 0;
+    //   }, 200);
+    // }
+
     profileToggle = () => {
         this.setState({
             modal: !this.state.modal
