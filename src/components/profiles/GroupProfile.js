@@ -34,7 +34,7 @@ const GroupProfile = (props)  => {
 		        </span>
 
 		        <div className = {styles.StatusAbout}>
-		            <label for = 'about' className = {styles.StatusAboutAdd}>Описание: </label>
+		            <label htmlFor = 'about' className = {styles.StatusAboutAdd}>Описание: </label>
 		            <input type = 'text' className = {styles.StatusAboutText} id = 'about'/>
 		            <button className = {styles.Edit}>
                         <div className = {styles.EditIcon}> </div>
@@ -62,7 +62,7 @@ const GroupProfile = (props)  => {
 		            </button>
 		             <div className = {styles.ToggleSwitch}>
 		                <input type = 'checkbox' className = {styles.Switch} id = 'switch'/>
-		                <label for = 'switch' className = {styles.SwitchLine}> </label>
+		                <label htmlFor = 'switch' className = {styles.SwitchLine}> </label>
 		            </div>
 		        </li>
 		        {/*<li className = {styles.GroupMenuItems}>
