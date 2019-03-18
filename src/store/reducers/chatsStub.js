@@ -2,7 +2,7 @@
 const ChatsAPI = {
   chats: [
             {
-            id: '5c5884cc8c7a91e5b8eb8cc6',
+            id: '5c8fff3ce97e450358f6fbd1',
             img: 'http://simsontraining.com/wp-content/uploads/2015/03/testimonial_icon-60x60.png',
             name: 'Группа стажировки',
             description: 'Команда разработчиков десктоп - версии мессенджера “Pocket Messenger”',
@@ -15,7 +15,7 @@ const ChatsAPI = {
             }
         },
         {
-            id: '5c5885108c7a91e5b8eb8cc7',
+            id: '5c8fffafe97e450358f6fbd2',
             img: 'http://iconnectites.com/images/website-development.png',
             name: "Design department",
             description: 'Команда дизайнеров мессенджера “Pocket Messenger”',

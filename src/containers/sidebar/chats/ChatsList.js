@@ -17,7 +17,7 @@ class ChatsList extends React.Component {
     click_count = 1;
 
     state = {
-        modal: false,
+        // modal: false,
         id: null
     }
     // shouldComponentUpdate(nextProps, nextState) {
@@ -28,20 +28,20 @@ class ChatsList extends React.Component {
     // }
 
 
-    componentDidUpdate(prevProps, prevState) {
-        if (this.state.id !== prevState.id) {
-            this.props.dispatch(getGroupProfile(this.state.id));
-        }
-    }
+    // componentDidUpdate(prevProps, prevState) {
+    //     if (this.state.id !== prevState.id) {
+    //         this.props.dispatch(getGroupProfile(this.state.id));
+    //     }
+    // }
 
-    static getDerivedStateFromProps(nextProps, prevState) {
-        if (nextProps.id !== prevState.id ) {
-            return {
-                id: nextProps.id
-            }
-        }
-        return null;
-    }
+    // static getDerivedStateFromProps(nextProps, prevState) {
+    //     if (nextProps.id !== prevState.id ) {
+    //         return {
+    //             id: nextProps.id
+    //         }
+    //     }
+    //     return null;
+    // }
 
     handleClicks = (id) => {
         if (this.clickTimeout !== null) {
@@ -51,9 +51,19 @@ class ChatsList extends React.Component {
                 //один клик
                 if(this.click_count === 1){
                     this.props.dispatch(setActiveChat(id, 1));
+                    console.log('один клик');
+                    this.setState({id: id});
                 //два клика
-                } else if (id === this.state.id){
-                    this.setState({modal: true});
+                // ----старое -----
+                // } else if (id === this.state.id){
+                //     this.setState({modal: true});
+                // }
+                } else {
+                    this.props.dispatch(getGroupProfile(id)).then(() => {
+                        this.props.openProfile();
+                        console.log('двойной клик данные пришли');
+                    })
+                    console.log('двойной клик');
                 }
                 this.click_count = 1;
                 clearTimeout(this.clickTimeout);
@@ -63,11 +73,11 @@ class ChatsList extends React.Component {
         }
     }
 
-    profileToggle = () => {
-        this.setState({
-            modal: !this.state.modal
-        });
-    }
+    // profileToggle = () => {
+    //     this.setState({
+    //         modal: !this.state.modal
+    //     });
+    // }
 
     getInviteCode = () => {
         this.props.dispatch(getInviteCode(this.state.id));
@@ -84,9 +94,9 @@ class ChatsList extends React.Component {
                 <Modal classesNames = 'Profile'>
                     <GroupProfile id = 'Profile'
                                 profile = {this.props.group}
-                                invitation_link = {this.props.invitation_link}
-                                profileToggle = {this.profileToggle}
-                                getInviteCode = {this.getInviteCode}
+                                // invitation_link = {this.props.invitation_link}
+                                profileToggle = {() => {this.props.profileToggle()}}
+                                // getInviteCode = {this.getInviteCode}
                                 />
                 </Modal>
             </>

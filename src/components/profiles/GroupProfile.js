@@ -1,9 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import styles from './GroupProfile.module.css';
-
-
 const GroupProfile = (props)  => {
 	return (
 		<div className = {styles.Profile} id = {props.id}>
