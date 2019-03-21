@@ -10,32 +10,30 @@ import { connectWS } from '../store/actions';
 import classes from './MainPage.module.css';
 
 class MainPage extends Component {
-    componentDidMount() {
-        if (!this.props.connected) {
-            this.props.dispatch(connectWS());
-        }
+  componentDidMount() {
+    if (!this.props.connected) {
+      this.props.dispatch(connectWS());
     }
+  }
 
-    render() {
-        return (
-            <div className={classes.mainPage}>
-                <Sidebar />
-                <div className={classes.chatWindow}>
-                    <Switch>
-                        <Route path="/account" component={Account} />
-                        <Route path="/" component={MessageForm} />
-                    </Switch>
-                </div>
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div className={classes.mainPage}>
+        <Sidebar />
+        <div className={classes.chatWindow}>
+          <Switch>
+            <Route path="/account" component={Account} />
+            <Route path="/" component={MessageForm} />
+          </Switch>
+        </div>
+      </div>
+    );
+  }
 }
 
-const mapStateToProps = (store) => {
-    return {
-        activeContact: store.contacts.activeContact,
-        connected: store.ws.connected,
-    }
-}
+const mapStateToProps = store => ({
+  activeContact: store.contacts.activeContact,
+  connected: store.ws.connected,
+});
 
 export default connect(mapStateToProps)(MainPage);
