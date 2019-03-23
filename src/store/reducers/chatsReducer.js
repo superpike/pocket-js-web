@@ -23,7 +23,7 @@ export function chatsReducer(state = initialState, action) {
     case ConstantChats.GET_CHATS_FULFILLED: {
       state = {
         ...state,
-        chats: action.payload.data,
+        chats: action.payload.data.data,
         is_loading: false,
       };
       break;

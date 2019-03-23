@@ -44,7 +44,7 @@ class Chats extends React.Component {
             case 1:
                 return (
                     <ChatsList 
-                    // chats={this.props.chats}
+                    chats={this.props.chats}
                     createGroup = {() => {this.setState({active: 2})}}
                     searchGroup = {() => {this.setState({active: 3})}}
                     openProfile = {this.openProfile}

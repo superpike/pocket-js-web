@@ -11,7 +11,7 @@ export default class ChatsItem extends Component {
         <NavLink to={`/chats/${this.props.id}`}>
           <div className={styles.Item}>
             <div className={styles.Img}>
-              <img src={this.props.img} className={styles.Icon} alt="group_icon" />
+              <img src='http://simsontraining.com/wp-content/uploads/2015/03/testimonial_icon-60x60.png' className={styles.Icon} alt="group_icon" />
             </div>
 
             <div className={styles.Chat}>
@@ -19,7 +19,7 @@ export default class ChatsItem extends Component {
                 {this.props.name}
               </div>
               <div className={styles.Text}>
-                {this.props.text}
+                {this.props.preview}
               </div>
             </div>
             <div className={styles.Unread}>
