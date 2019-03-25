@@ -4,7 +4,7 @@ import {
 import { websocket } from '../../websocket/Websocket';
 
 
-export function connectWS(url = 'ws://localhost:8888') {
+export function connectWS(url = 'wss://pocketmsg.ru') {
   return {
     type: WEBSOCKET_CONNECT,
     payload: { url: `${url}/socket?token=${localStorage.getItem('token')}` },

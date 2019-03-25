@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: 'http://localhost:8888',
+  baseURL: 'https://pocketmsg.ru',
   headers: {
     'Content-Type': 'application/json',
     Authorization: `Bearer ${localStorage.getItem('token')}`,
