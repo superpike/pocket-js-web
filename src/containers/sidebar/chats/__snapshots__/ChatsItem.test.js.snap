@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render ChatsItem render correctly ChatsItem component 1`] = `
+<div
+  className="Block"
+  id="ChatsItem"
+  onClick={[Function]}
+>
+  <a
+    aria-current={null}
+    href="/chats/undefined"
+    onClick={[Function]}
+  >
+    <div
+      className="Item"
+    >
+      <div
+        className="Img"
+      >
+        <img
+          alt="group_icon"
+          className="Icon"
+          src="http://simsontraining.com/wp-content/uploads/2015/03/testimonial_icon-60x60.png"
+        />
+      </div>
+      <div
+        className="Chat"
+      >
+        <div
+          className="Text"
+        />
+      </div>
+    </div>
+  </a>
+</div>
+`;
