@@ -8,7 +8,7 @@ import Modal from  '../../../components/UI/Modal/Modal';
 
 import Spinner from '../../../components/UI/Spinner/Spinner';
 
-import {getChats, searchGroup} from '../../../store/actions/index';
+import {getChats, searchGroup, getInviteCode} from '../../../store/actions/index';
 
 import {connect} from 'react-redux';
 
@@ -17,6 +17,7 @@ import {connect} from 'react-redux';
 class Chats extends React.Component {
 
     state = {
+        // id: null,
         active: 1,
         modal: false
     };
@@ -38,6 +39,9 @@ class Chats extends React.Component {
     openProfile = () => {
         this.setState({ modal: true });
         console.log(this.state.modal);
+    }
+    getInviteCode = () => {
+        this.props.dispatch(getInviteCode(this.state.id));
     }
     switchComponent() {
         switch(this.state.active) {
@@ -70,7 +74,6 @@ class Chats extends React.Component {
         }
     }
 
-    
 	render() {
 		if(this.props.is_loading){
             return <Spinner />
@@ -80,9 +83,9 @@ class Chats extends React.Component {
                 <Modal classesNames = 'Profile'>
                     <GroupProfile id = 'Profile'
                                 profile = {this.props.group}
-                                // invitation_link = {this.props.invitation_link}
+                                invitation_link = {this.props.invitation_link}
                                 profileToggle = {this.profileToggle}
-                                // getInviteCode = {this.getInviteCode}
+                                getInviteCode = {this.getInviteCode}
                                 />
                 </Modal>
             </>
@@ -102,8 +105,10 @@ class Chats extends React.Component {
 
 function mapStateToProps(store) {
     return {
+        // id: store.messages.id,
         chats: store.chats.chats,
         group: store.chats.group,
+        invitation_link: store.chats.invitation_link,
         is_loading: store.chats.is_loading,
     }
 }
