@@ -10,7 +10,7 @@ export let websocket;
  */
 let oddId = 1;
 const middleware = store => next => (action) => {
-  const {dispatch} = store;
+  const { dispatch } = store;
   switch (action.type) {
     // User request to connect
     case WEBSOCKET_CONNECT:

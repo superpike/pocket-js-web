@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 
 import styles from './ChatsItem.module.css';
 
-
 const ChatsItem = props => (
     <div id="ChatsItem" className={styles.Block} onClick={() => props.handleClicks(props.id)}>
         <NavLink to={`/chats/${props.id}`}>
