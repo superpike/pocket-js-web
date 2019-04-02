@@ -85,10 +85,6 @@ class ChatsList extends React.Component {
 
     render(){
 
-        if(!this.props.chats.length){
-            return null; //Если данные еще загружаются
-        }
-
         let profile = this.state.modal ? (
             <>
                 <Modal classesNames = 'Profile'>
