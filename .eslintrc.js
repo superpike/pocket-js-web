@@ -2,21 +2,22 @@ module.exports = {
   env: {
     browser: true,
     es6: true,
+    jest: true
   },
   extends: 'airbnb',
   globals: {
     Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
+    SharedArrayBuffer: 'readonly'
   },
   parserOptions: {
     ecmaFeatures: {
-      jsx: true,
+      jsx: true
     },
-    ecmaVersion: 2018,
+    ecmaVersion: 2018
   },
   plugins: [
-    'react',
+    'react'
   ],
   rules: {
-  },
-};
+  }
+}
