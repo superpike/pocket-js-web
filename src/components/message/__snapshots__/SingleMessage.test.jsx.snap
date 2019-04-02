@@ -1,0 +1,1135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SingleMessage message.message=Clown, outpitTime=Mon Apr 01 2019 00:05:29 GMT+0300 (GMT+03:00) 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <SingleMessage
+    message={
+      Object {
+        "author": "Clown",
+        "message": "Clown",
+        "receiver": 55,
+      }
+    }
+    outputTime={2019-03-31T21:05:29.930Z}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div>
+          <img
+            alt="avatar"
+            className="miniFoto"
+            src="woman-4.png"
+          />
+        </div>,
+        <div
+          className="blockMy"
+        >
+          <div
+            className="blockSmsMy"
+          >
+            <div
+              className="name"
+            >
+              Clown
+            </div>
+            <div
+              className="text"
+            >
+              Clown
+            </div>
+          </div>
+          <div
+            className="timeMy"
+          >
+            00:05:29
+          </div>
+        </div>,
+      ],
+      "className": "superBlockMy",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <img
+            alt="avatar"
+            className="miniFoto"
+            src="woman-4.png"
+          />,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "alt": "avatar",
+            "className": "miniFoto",
+            "src": "woman-4.png",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="blockSmsMy"
+            >
+              <div
+                className="name"
+              >
+                Clown
+              </div>
+              <div
+                className="text"
+              >
+                Clown
+              </div>
+            </div>,
+            <div
+              className="timeMy"
+            >
+              00:05:29
+            </div>,
+          ],
+          "className": "blockMy",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div
+                  className="name"
+                >
+                  Clown
+                </div>,
+                <div
+                  className="text"
+                >
+                  Clown
+                </div>,
+              ],
+              "className": "blockSmsMy",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Clown",
+                  "className": "name",
+                },
+                "ref": null,
+                "rendered": "Clown",
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Clown",
+                  "className": "text",
+                },
+                "ref": null,
+                "rendered": "Clown",
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "00:05:29",
+              "className": "timeMy",
+            },
+            "ref": null,
+            "rendered": "00:05:29",
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div>
+            <img
+              alt="avatar"
+              className="miniFoto"
+              src="woman-4.png"
+            />
+          </div>,
+          <div
+            className="blockMy"
+          >
+            <div
+              className="blockSmsMy"
+            >
+              <div
+                className="name"
+              >
+                Clown
+              </div>
+              <div
+                className="text"
+              >
+                Clown
+              </div>
+            </div>
+            <div
+              className="timeMy"
+            >
+              00:05:29
+            </div>
+          </div>,
+        ],
+        "className": "superBlockMy",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <img
+              alt="avatar"
+              className="miniFoto"
+              src="woman-4.png"
+            />,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "avatar",
+              "className": "miniFoto",
+              "src": "woman-4.png",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="blockSmsMy"
+              >
+                <div
+                  className="name"
+                >
+                  Clown
+                </div>
+                <div
+                  className="text"
+                >
+                  Clown
+                </div>
+              </div>,
+              <div
+                className="timeMy"
+              >
+                00:05:29
+              </div>,
+            ],
+            "className": "blockMy",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <div
+                    className="name"
+                  >
+                    Clown
+                  </div>,
+                  <div
+                    className="text"
+                  >
+                    Clown
+                  </div>,
+                ],
+                "className": "blockSmsMy",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Clown",
+                    "className": "name",
+                  },
+                  "ref": null,
+                  "rendered": "Clown",
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Clown",
+                    "className": "text",
+                  },
+                  "ref": null,
+                  "rendered": "Clown",
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "00:05:29",
+                "className": "timeMy",
+              },
+              "ref": null,
+              "rendered": "00:05:29",
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`SingleMessage message.message=Clown, outpitTime=Mon Apr 01 2019 00:05:29 GMT+0300 (GMT+03:00) 2`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <SingleMessage
+    message={
+      Object {
+        "author": "Clown",
+        "message": "Clown",
+        "receiver": 155,
+      }
+    }
+    outputTime={2019-03-31T21:05:29.930Z}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div>
+          <img
+            alt="avatar"
+            className="miniFoto"
+            src="woman-4.png"
+          />
+        </div>,
+        <div
+          className="block"
+        >
+          <div
+            className="blockSms"
+          >
+            <div
+              className="name"
+            >
+              Clown
+            </div>
+            <div
+              className="text"
+            >
+              Clown
+            </div>
+          </div>
+          <div
+            className="time"
+          >
+            00:05:29
+          </div>
+        </div>,
+      ],
+      "className": "superBlock",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <img
+            alt="avatar"
+            className="miniFoto"
+            src="woman-4.png"
+          />,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "alt": "avatar",
+            "className": "miniFoto",
+            "src": "woman-4.png",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="blockSms"
+            >
+              <div
+                className="name"
+              >
+                Clown
+              </div>
+              <div
+                className="text"
+              >
+                Clown
+              </div>
+            </div>,
+            <div
+              className="time"
+            >
+              00:05:29
+            </div>,
+          ],
+          "className": "block",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div
+                  className="name"
+                >
+                  Clown
+                </div>,
+                <div
+                  className="text"
+                >
+                  Clown
+                </div>,
+              ],
+              "className": "blockSms",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Clown",
+                  "className": "name",
+                },
+                "ref": null,
+                "rendered": "Clown",
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Clown",
+                  "className": "text",
+                },
+                "ref": null,
+                "rendered": "Clown",
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "00:05:29",
+              "className": "time",
+            },
+            "ref": null,
+            "rendered": "00:05:29",
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div>
+            <img
+              alt="avatar"
+              className="miniFoto"
+              src="woman-4.png"
+            />
+          </div>,
+          <div
+            className="block"
+          >
+            <div
+              className="blockSms"
+            >
+              <div
+                className="name"
+              >
+                Clown
+              </div>
+              <div
+                className="text"
+              >
+                Clown
+              </div>
+            </div>
+            <div
+              className="time"
+            >
+              00:05:29
+            </div>
+          </div>,
+        ],
+        "className": "superBlock",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <img
+              alt="avatar"
+              className="miniFoto"
+              src="woman-4.png"
+            />,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "avatar",
+              "className": "miniFoto",
+              "src": "woman-4.png",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="blockSms"
+              >
+                <div
+                  className="name"
+                >
+                  Clown
+                </div>
+                <div
+                  className="text"
+                >
+                  Clown
+                </div>
+              </div>,
+              <div
+                className="time"
+              >
+                00:05:29
+              </div>,
+            ],
+            "className": "block",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <div
+                    className="name"
+                  >
+                    Clown
+                  </div>,
+                  <div
+                    className="text"
+                  >
+                    Clown
+                  </div>,
+                ],
+                "className": "blockSms",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Clown",
+                    "className": "name",
+                  },
+                  "ref": null,
+                  "rendered": "Clown",
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Clown",
+                    "className": "text",
+                  },
+                  "ref": null,
+                  "rendered": "Clown",
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "00:05:29",
+                "className": "time",
+              },
+              "ref": null,
+              "rendered": "00:05:29",
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`SingleMessage message.message=you, outpitTime=Mon Apr 01 2019 00:05:29 GMT+0300 (GMT+03:00) 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <SingleMessage
+    message={
+      Object {
+        "author": "Вы",
+        "message": "you",
+        "receiver": 1,
+      }
+    }
+    outputTime={2019-03-31T21:05:29.930Z}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div>
+          <img
+            alt="avatar"
+            className="miniFoto"
+            src="woman-4.png"
+          />
+        </div>,
+        <div
+          className="blockMy"
+        >
+          <div
+            className="blockSmsMy"
+          >
+            <div
+              className="name"
+            >
+              Вы
+            </div>
+            <div
+              className="text"
+            >
+              you
+            </div>
+          </div>
+          <div
+            className="timeMy"
+          >
+            00:05:29
+          </div>
+        </div>,
+      ],
+      "className": "superBlockMy",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <img
+            alt="avatar"
+            className="miniFoto"
+            src="woman-4.png"
+          />,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "alt": "avatar",
+            "className": "miniFoto",
+            "src": "woman-4.png",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="blockSmsMy"
+            >
+              <div
+                className="name"
+              >
+                Вы
+              </div>
+              <div
+                className="text"
+              >
+                you
+              </div>
+            </div>,
+            <div
+              className="timeMy"
+            >
+              00:05:29
+            </div>,
+          ],
+          "className": "blockMy",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div
+                  className="name"
+                >
+                  Вы
+                </div>,
+                <div
+                  className="text"
+                >
+                  you
+                </div>,
+              ],
+              "className": "blockSmsMy",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Вы",
+                  "className": "name",
+                },
+                "ref": null,
+                "rendered": "Вы",
+                "type": "div",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "you",
+                  "className": "text",
+                },
+                "ref": null,
+                "rendered": "you",
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "00:05:29",
+              "className": "timeMy",
+            },
+            "ref": null,
+            "rendered": "00:05:29",
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div>
+            <img
+              alt="avatar"
+              className="miniFoto"
+              src="woman-4.png"
+            />
+          </div>,
+          <div
+            className="blockMy"
+          >
+            <div
+              className="blockSmsMy"
+            >
+              <div
+                className="name"
+              >
+                Вы
+              </div>
+              <div
+                className="text"
+              >
+                you
+              </div>
+            </div>
+            <div
+              className="timeMy"
+            >
+              00:05:29
+            </div>
+          </div>,
+        ],
+        "className": "superBlockMy",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <img
+              alt="avatar"
+              className="miniFoto"
+              src="woman-4.png"
+            />,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "avatar",
+              "className": "miniFoto",
+              "src": "woman-4.png",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="blockSmsMy"
+              >
+                <div
+                  className="name"
+                >
+                  Вы
+                </div>
+                <div
+                  className="text"
+                >
+                  you
+                </div>
+              </div>,
+              <div
+                className="timeMy"
+              >
+                00:05:29
+              </div>,
+            ],
+            "className": "blockMy",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <div
+                    className="name"
+                  >
+                    Вы
+                  </div>,
+                  <div
+                    className="text"
+                  >
+                    you
+                  </div>,
+                ],
+                "className": "blockSmsMy",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Вы",
+                    "className": "name",
+                  },
+                  "ref": null,
+                  "rendered": "Вы",
+                  "type": "div",
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "you",
+                    "className": "text",
+                  },
+                  "ref": null,
+                  "rendered": "you",
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "00:05:29",
+                "className": "timeMy",
+              },
+              "ref": null,
+              "rendered": "00:05:29",
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": Object {
+            "hasShouldComponentUpdateBug": false,
+          },
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;
