@@ -54,11 +54,18 @@ class ChatsList extends React.Component {
     // }
 
     render(){
-
-        if(!this.props.chats.length){
-            return null; //Если данные еще загружаются
-        }
-
+        let profile = this.state.modal ? (
+            <>
+                <Modal classesNames = 'Profile'>
+                    <GroupProfile id = 'Profile'
+                                profile = {this.props.group}
+                                // invitation_link = {this.props.invitation_link}
+                                profileToggle = {() => {this.props.profileToggle()}}
+                                // getInviteCode = {this.getInviteCode}
+                                />
+                </Modal>
+            </>
+        ) : null;
 
         let chats = this.props.chats.map((chat, index) => {
             return <ChatsItem key = {index}
