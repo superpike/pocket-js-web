@@ -34,7 +34,7 @@ export class ChatsList extends React.Component {
     }
 
     render(){
-        let chats = this.props.chats ? this.props.chats.map((chat, index) => {
+        let chats = this.props.chats.map((chat, index) => {
             return <ChatsItem key = {index}
                               handleClicks = {this.handleClicks}
                             {...chat}/>
