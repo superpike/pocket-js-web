@@ -21,9 +21,9 @@ class ContactsList extends React.Component {
     }
 
     render(){
-        if(!this.props.contacts.length){
-            return null; //Если данные еще загружаются
-        }
+        // if(!this.props.contacts.length){
+        //     return null; //Если данные еще загружаются
+        // }
 
         let profile = this.state.modal ? (
             <>
