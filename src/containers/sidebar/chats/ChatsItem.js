@@ -5,7 +5,7 @@ import styles from './ChatsItem.module.css';
 
 
 const ChatsItem = props => (
-  <div id="ChatsItem" className={styles.Block} onClick={() => props.handleClicks(props.id)}>
+  <div className={styles.Block} onClick={() => props.handleClicks(props.id)}>
     <NavLink to={`/chats/${props.id}`}>
       <div className={styles.Item}>
         <div className={styles.Img}>
@@ -13,20 +13,20 @@ const ChatsItem = props => (
         </div>
         <div className={styles.Chat}>
           {/* <div className={styles.Title}>
-                        {props.name}
-                    </div> */}
+              {props.name}
+          </div> */}
           <div className={styles.Text}>
             {props.preview}
           </div>
         </div>
         {/* <div className={styles.Unread}>
-                    {props.unread}
-                </div> */}
+            {props.unread}
+        </div> */}
         {/* <div className={styles.Time}>
-                    {props.time}
-                </div> */}
+            {props.time}
+        </div> */}
         {/* <div className={styles.Mark}>
-                </div> */}
+        </div> */}
       </div>
     </NavLink>
   </div>

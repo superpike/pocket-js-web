@@ -17,6 +17,6 @@ describe('render ChatsItem', () => {
             preview: 'some text',
         };
         const ChatsItemComponent = mount(<Router><ChatsItem {...props} /></Router>);
-        expect(ChatsItemComponent.find('#ChatsItem').length).toEqual(1);
+        expect(ChatsItemComponent.find('.Block').length).toEqual(1);
     });
 });
