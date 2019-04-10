@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render ChatsList render correctly ChatsList component 1`] = `
+Array [
+  <div
+    className="List"
+  />,
+  <div
+    className="ButtonsBlock"
+  >
+    <button
+      className="Button"
+    >
+      <div>
+        <i
+          className="ButtonIcon fas fa-check"
+        />
+      </div>
+      <span
+        className="ButtonText"
+      >
+        Создать группу
+      </span>
+    </button>
+    <button
+      className="Button"
+    >
+      <div
+        className="ButtonIcon"
+      >
+        +
+      </div>
+      <span
+        className="Text"
+      >
+         Добавить группу
+      </span>
+    </button>
+  </div>,
+]
+`;

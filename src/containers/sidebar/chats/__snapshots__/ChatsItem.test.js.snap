@@ -3,7 +3,6 @@
 exports[`render ChatsItem render correctly ChatsItem component 1`] = `
 <div
   className="Block"
-  id="ChatsItem"
   onClick={[Function]}
 >
   <a

@@ -17,7 +17,6 @@ import {connect} from 'react-redux';
 class Chats extends React.Component {
 
     state = {
-        // id: null,
         active: 1,
         modal: false
     };
@@ -36,13 +35,10 @@ class Chats extends React.Component {
         });
     }
 
-    openProfile = () => {
-        this.setState({ modal: true });
-        console.log(this.state.modal);
-    }
     getInviteCode = () => {
         this.props.dispatch(getInviteCode(this.state.id));
     }
+
     switchComponent() {
         switch(this.state.active) {
             case 1:
@@ -51,7 +47,7 @@ class Chats extends React.Component {
                     chats={this.props.chats}
                     createGroup = {() => {this.setState({active: 2})}}
                     searchGroup = {() => {this.setState({active: 3})}}
-                    openProfile = {this.openProfile}
+                    openProfile = {this.profileToggle}
                     />
                 );
             break;
@@ -74,6 +70,7 @@ class Chats extends React.Component {
         }
     }
 
+    
 	render() {
 		if(this.props.is_loading){
             return <Spinner />
@@ -93,9 +90,12 @@ class Chats extends React.Component {
 
         return (
             <>
-                { this.switchComponent() }
                 <div>
-                { profile }
+                    { this.switchComponent() }
+                </div>
+                
+                <div>
+                    { profile }
                 </div>
             </>
 
@@ -105,7 +105,6 @@ class Chats extends React.Component {
 
 function mapStateToProps(store) {
     return {
-        // id: store.messages.id,
         chats: store.chats.chats,
         group: store.chats.group,
         invitation_link: store.chats.invitation_link,
