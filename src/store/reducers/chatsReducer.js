@@ -2,7 +2,7 @@ import * as Constants from '../constants';
 
 import ChatsAPI from './chatsStub';
 
-const chats = ChatsAPI.all();
+// const chats = ChatsAPI.all();
 
 const initialState = {
   chats: [],
@@ -36,7 +36,7 @@ export function chatsReducer(state = initialState, action) {
     }
     case Constants.GET_CHATS_REJECTED: {
       state = {
-        chats,
+        chats: [],
         is_loading: false,
         error_message: action.payload.message,
       };
@@ -55,7 +55,8 @@ export function chatsReducer(state = initialState, action) {
       state = {
         ...state,
         is_loading: false,
-        chats: [...chats,action.payload.data],
+        chats: [...state.chats,action.payload.data],
+        activeChat: action.payload.data,
       };
       break;
     }
@@ -64,6 +65,7 @@ export function chatsReducer(state = initialState, action) {
         ...state,
         is_loading: false,
         error_message: action.payload.message,
+        activeChat: null,
       };
       break;
     }

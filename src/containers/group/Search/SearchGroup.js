@@ -57,8 +57,8 @@ class SearchGroup extends Component {
                         placeholder='Название группы ...'
                         changed={this.onChangeSearchHandler}/>
                     <button className = {classes.Search} 
-                            onCLick = {() => {this.props.searchGroup(this.state.searchString)}}>
-                        <i class="fas fa-search"/>
+                            onClick = {() => {this.props.searchGroup(this.state.searchString)}}>
+                        <i className="fas fa-search"/>
                     </button>
                 </div>
                 <ul className={classes.GroupList}>
@@ -66,7 +66,7 @@ class SearchGroup extends Component {
                 </ul>
                 <div className={classes.Buttons}>
                     <button className={classes.Button} onClick={this.props.closeForm}>
-                        <i class="fas fa-times"></i>
+                        <i className="fas fa-times"></i>
                     </button>
                 </div>
             </>

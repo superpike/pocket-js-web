@@ -24,6 +24,7 @@ class CreateGroup extends Component {
 
     onCLickConfirmHandler = () => {
         this.props.dispatch(createGroup(this.state.name, this.state.description));
+        this.props.closeForm();
     }
 
     render() {
@@ -46,10 +47,10 @@ class CreateGroup extends Component {
                 <div className={classes.Buttons}>
                     {/* <button className={classes.Button} onCLick={() => {props.createGroup({...this.state})}}> */}
                     <button className={classes.Button} onClick={this.onCLickConfirmHandler}>
-                        <i class="fas fa-check"></i>
+                        <i className="fas fa-check"></i>
                     </button>
                     <button className={classes.Button} onClick={this.props.closeForm}>
-                        <i class="fas fa-times"></i>
+                        <i className="fas fa-times"></i>
                     </button>
                 </div>
             </div>
