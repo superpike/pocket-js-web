@@ -28,7 +28,7 @@ export function getMessages(id) {
 
   return {
     type: GET_MESSAGES,
-    payload: instance.get(`/user/${id}/contacts`),
+    payload: instance.get(`/users/${id}/messages`),
     // messages
   };
 }
