@@ -1,4 +1,4 @@
-import * as ConstantChats from '../constants';
+import * as Constants from '../constants';
 
 import ChatsAPI from './chatsStub';
 
@@ -12,15 +12,21 @@ const initialState = {
 
 export function chatsReducer(state = initialState, action) {
   switch (action.type) {
+    case Constants.LOGOUT: {
+      state = {
+        ...initialState,
+      };
+      break;
+    }
     // получить список чатов------------------------------
-    case ConstantChats.GET_CHATS_PENDING: {
+    case Constants.GET_CHATS_PENDING: {
       state = {
         ...state,
         is_loading: true,
       };
       break;
     }
-    case ConstantChats.GET_CHATS_FULFILLED: {
+    case Constants.GET_CHATS_FULFILLED: {
       state = {
         ...state,
         chats: action.payload.data.data,
@@ -28,7 +34,7 @@ export function chatsReducer(state = initialState, action) {
       };
       break;
     }
-    case ConstantChats.GET_CHATS_REJECTED: {
+    case Constants.GET_CHATS_REJECTED: {
       state = {
         chats,
         is_loading: false,
@@ -38,22 +44,22 @@ export function chatsReducer(state = initialState, action) {
     }
 
     // создать группу------------------------------
-    case ConstantChats.CREATE_GROUP_PENDING: {
+    case Constants.CREATE_GROUP_PENDING: {
       state = {
         ...state,
         is_loading: true,
       };
       break;
     }
-    case ConstantChats.CREATE_GROUP_FULFILLED: {
+    case Constants.CREATE_GROUP_FULFILLED: {
       state = {
         ...state,
         is_loading: false,
-        group: action.payload.data,
+        chats: [...chats,action.payload.data],
       };
       break;
     }
-    case ConstantChats.CREATE_GROUP_REJECTED: {
+    case Constants.CREATE_GROUP_REJECTED: {
       state = {
         ...state,
         is_loading: false,
@@ -63,14 +69,14 @@ export function chatsReducer(state = initialState, action) {
     }
 
     // профиль группы------------------------------
-    case ConstantChats.GET_GROUP_PROFILE_PENDING: {
+    case Constants.GET_GROUP_PROFILE_PENDING: {
       state = {
         ...state,
         is_loading: true,
       };
       break;
     }
-    case ConstantChats.GET_GROUP_PROFILE_FULFILLED: {
+    case Constants.GET_GROUP_PROFILE_FULFILLED: {
       state = {
         ...state,
         is_loading: false,
@@ -78,7 +84,7 @@ export function chatsReducer(state = initialState, action) {
       };
       break;
     }
-    case ConstantChats.GET_GROUP_PROFILE_REJECTED: {
+    case Constants.GET_GROUP_PROFILE_REJECTED: {
       state = {
         ...state,
         is_loading: false,
@@ -88,14 +94,14 @@ export function chatsReducer(state = initialState, action) {
     }
 
     // поиск группы------------------------------
-    case ConstantChats.SEARCH_GROUP_PENDING: {
+    case Constants.SEARCH_GROUP_PENDING: {
       state = {
         ...state,
         is_loading: true,
       };
       break;
     }
-    case ConstantChats.SEARCH_GROUP_FULFILLED: {
+    case Constants.SEARCH_GROUP_FULFILLED: {
       state = {
         ...state,
         is_loading: false,
@@ -103,7 +109,7 @@ export function chatsReducer(state = initialState, action) {
       };
       break;
     }
-    case ConstantChats.SEARCH_GROUP_REJECTED: {
+    case Constants.SEARCH_GROUP_REJECTED: {
       state = {
         ...state,
         is_loading: false,
@@ -113,14 +119,14 @@ export function chatsReducer(state = initialState, action) {
     }
 
     // получить инвайт------------------------------
-    case ConstantChats.GET_INVITE_CODE_PENDING: {
+    case Constants.GET_INVITE_CODE_PENDING: {
       state = {
         ...state,
         is_loading: true,
       };
       break;
     }
-    case ConstantChats.GET_INVITE_CODE_FULFILLED: {
+    case Constants.GET_INVITE_CODE_FULFILLED: {
       const code = action.payload.data.invitation_code;
       const request = action.payload.request.responseURL;
       const id = request.match(/(?<=groups\/)(.*)(?=\/invites)/g);
@@ -132,7 +138,7 @@ export function chatsReducer(state = initialState, action) {
       };
       break;
     }
-    case ConstantChats.GET_INVITE_CODE_REJECTED: {
+    case Constants.GET_INVITE_CODE_REJECTED: {
       state = {
         ...state,
         is_loading: false,

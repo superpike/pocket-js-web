@@ -7,6 +7,12 @@ const initialState = {
 
 export function messagesReducer(state = initialState, action) {
   switch (action.type) {
+    case Constants.LOGOUT: {
+      state = {
+        ...initialState,
+      };
+      break;
+    }
     case Constants.SET_ACTIVE_CHAT: {
       const id = action.payload.id;
       const active = action.payload.active;

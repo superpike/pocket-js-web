@@ -10,6 +10,11 @@ const initialState = {
  */
 export function websocketReducer(state = initialState, action) {
   switch (action.type) {
+    case Constants.LOGOUT: {
+      return {
+        ...initialState,
+      };
+    }
     case Constants.WEBSOCKET_MESSAGE:
       const data = action.payload.data;
       // console.log(`got message: ${data}`);

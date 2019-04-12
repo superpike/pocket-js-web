@@ -11,6 +11,12 @@ const initialState = {
 
 export function usersReducer(state = initialState, action) {
   switch (action.type) {
+    case Constants.LOGOUT: {
+      state = {
+        ...initialState,
+      };
+      break;
+    }
     case Constants.GET_USERS_PENDING: {
       state = { ...state, is_loading_users: true };
       break;

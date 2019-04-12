@@ -8,6 +8,12 @@ const initialState = {
 
 export function accountReducer(state = initialState, action) {
   switch (action.type) {
+    case Constants.LOGOUT: {
+      state = {
+        ...initialState,
+      };
+      break;
+    }
     case Constants.GET_ACCOUNT_PENDING: {
       state = { ...state, is_loading_account: true };
       break;

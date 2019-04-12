@@ -11,6 +11,12 @@ const initialState = {
 
 export function contactsReducer(state = initialState, action) {
   switch (action.type) {
+    case Constants.LOGOUT: {
+      state = {
+        ...initialState,
+      };
+      break;
+    }
     // Получение списка контактов
     case Constants.GET_CONTACTS_PENDING: {
       state = { ...state, is_loading_contacts: true };
