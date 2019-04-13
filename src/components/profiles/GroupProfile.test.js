@@ -31,7 +31,7 @@ describe('GroupProfile test Component', () => {
     console.log(node.debug());
   });
 
-  // проверка, что в тег p, второй по счету, передалось описание группы из props (пока не работает)
+  // проверка, что в тег p, второй по счету, передалось описание группы из props
   it('description group from props, is transmitted in tag p', ()=>{
     component = shallow(
       <GroupProfile profile={defaultProps} />
