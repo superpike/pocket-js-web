@@ -12,13 +12,10 @@ const GroupProfile = props => (
 
       <p className={styles.HeaderText}>
 					Групповой профиль
-
       </p>
 
       <div className={styles.GroupInfo}>
-        <h2 className={styles.GroupName}>
-          {props.profile.name}
-        </h2>
+        <h2 className={styles.GroupName}>{props.profile.name}</h2>
 
         {/* <button className = {styles.Edit}>
 						<div className = {styles.EditIcon}> </div>
@@ -41,10 +38,7 @@ const GroupProfile = props => (
         </button>
       </div>
 
-      <p className={styles.StatusText}>
-		        	//
-        {props.profile.description}
-      </p>
+      <p className={styles.StatusText}>{props.profile.description}</p>
     </div>
 
     <ul className={styles.GroupMenu}>
@@ -97,7 +91,7 @@ const GroupProfile = props => (
       <li className={styles.GroupMenuItems}>
         <button
           className={styles.ItemBtn}
-          onClick={() => { props.getInviteCode(); }}
+          onClick = {()=>{props.getInviteCode()}}
         >
 		                Получить инвайт
         </button>
@@ -121,7 +115,7 @@ const GroupProfile = props => (
     <div className={styles.CloseProfile}>
       <button
         className={styles.CloseBtn}
-        onClick={() => { props.profileToggle(); }}
+        onClick = {()=>{props.profileToggle()}}
       >
 						Закрыть
       </button>
