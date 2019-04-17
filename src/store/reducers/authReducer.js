@@ -1,5 +1,7 @@
 import * as Constants from '../constants';
 
+import instance from './../axios-docs';
+
 const initialState = {
   token: localStorage.getItem('token'),
   is_loading_user: false,
@@ -16,6 +18,7 @@ export function authReducer(state = initialState, action) {
     }
     case Constants.LOGIN_FULFILLED: {
       localStorage.setItem('token', action.payload.data.token);
+      instance.defaults.headers['Authorization'] = `Bearer ${localStorage.getItem('token')}`;
       state = {
         ...state,
         token: action.payload.data.token,
