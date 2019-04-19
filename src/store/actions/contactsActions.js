@@ -15,7 +15,7 @@ export function getContacts() {
 export function addContact(id, byname) {
   return {
     type: ADD_CONTACT,
-    payload: instance.post('/account/contacts/', { id, byname }),
+    payload: instance.post('/account/contacts/', { user:id, byname }),
   };
 }
 
