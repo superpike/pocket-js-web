@@ -15,9 +15,8 @@ export function registerUser(email, password, name) {
   };
 }
 
-export function logoutUser(token) {
+export function logoutUser() {
   return {
-    type: LOGOUT,
-    // payload: instance.put("/v1/auth/",{token})
+    type: LOGOUT
   };
 }

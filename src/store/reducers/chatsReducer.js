@@ -1,8 +1,5 @@
 import * as Constants from '../constants';
 
-import ChatsAPI from './chatsStub';
-
-// const chats = ChatsAPI.all();
 
 const initialState = {
   chats: [],
