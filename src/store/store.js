@@ -28,10 +28,10 @@ const reducers = combineReducers({
 
 const rootReducer = (state, action) => {
   if (action.type === 'LOGOUT') {
-      state = undefined
+    state = undefined;
   }
-  return reducers(state, action)
-}
+  return reducers(state, action);
+};
 
 const middleware = applyMiddleware(promise(), logger, thunk, websocket);
 

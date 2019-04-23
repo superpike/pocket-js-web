@@ -80,9 +80,6 @@ class SidebarHeader extends Component {
 	}
 
 	updateData = (id, name) => {
-		// //добавляем имя для последующего добавления в общий список;
-		// this.setState({ addItem: name });//для заглушки
-
 		//id для последующего добавления
 		this.setState({
 			active: id,
@@ -174,39 +171,28 @@ class SidebarHeader extends Component {
 		}
 	}
 
-	closeMenu = () => {
-		this.setState({
-			menu: false,
-		});
-	}
-
 	render() {
-		console.log(this.state.userName);
 		// компоненты главного меню
 		let menuItems = [
 			{
 				href: '/account',
 				icon: ' fas fa-user',
-				text: 'Личный кабинет',
-				action: ''
+				text: 'Личный кабинет'
 			},
 			{
 				href: '/profile',
 				icon: ' fas fa-user',
-				text: 'Профиль',
-				action: ''
+				text: 'Профиль'
 			},
 			{
 				href: '/auth',
 				icon: ' fas fa-user-times',
-				text: 'Выйти',
-				action: 'logout'
+				text: 'Выйти'
 			},
 			{
 				href: null,
 				icon: ' fas fa-user-slash',
-				text: 'Черный список',
-				action: 'usersListToggle'
+				text: 'Черный список'
 			}
 		];
 
@@ -218,7 +204,6 @@ class SidebarHeader extends Component {
 					<MenuList
 						menuToggle={this.menuToggle}
 						items={menuItems}
-						closeMenu={this.closeMenu}
 						usersListToggle={this.usersListToggle}
 					/>
 				</Modal>
@@ -273,7 +258,7 @@ function mapStateToProps(store) {
 		user: store.users.users,
 		userEmail: store.users.userEmail,
 		blacklist: store.contacts.blacklist,
-		is_loading_users: store.users.is_loading,
+		is_loading_users: store.users.is_loading
 	}
 }
 

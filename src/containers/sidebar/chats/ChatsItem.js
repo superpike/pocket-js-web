@@ -12,7 +12,7 @@ const ChatsItem = props => (
         </div>
         <div className={styles.Chat}>
           <div className={styles.Title}>
-              {props.name}
+            {props.name}
           </div>
           <div className={styles.Text}>
             {props.preview}

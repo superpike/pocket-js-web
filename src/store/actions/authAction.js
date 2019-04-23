@@ -17,6 +17,6 @@ export function registerUser(email, password, name) {
 
 export function logoutUser() {
   return {
-    type: LOGOUT
+    type: LOGOUT,
   };
 }

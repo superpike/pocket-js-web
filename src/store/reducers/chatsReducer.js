@@ -52,7 +52,7 @@ export function chatsReducer(state = initialState, action) {
       state = {
         ...state,
         is_loading: false,
-        chats: [...state.chats,action.payload.data],
+        chats: [...state.chats, action.payload.data],
         activeChat: action.payload.data,
       };
       break;
