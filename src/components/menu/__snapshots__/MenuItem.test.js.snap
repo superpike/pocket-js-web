@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render MenuItem render correctly MenuItem component 1`] = `
+<a
+  className="Item"
+  href="/auth"
+  onClick={[Function]}
+>
+  <i
+    className="Icon fas fa-user-times"
+  />
+  <p
+    className="Text"
+  >
+    Выйти
+  </p>
+</a>
+`;

@@ -11,9 +11,9 @@ const ChatsItem = props => (
           <img src="http://simsontraining.com/wp-content/uploads/2015/03/testimonial_icon-60x60.png" className={styles.Icon} alt="group_icon" />
         </div>
         <div className={styles.Chat}>
-          {/* <div className={styles.Title}>
-              {props.name}
-          </div> */}
+          <div className={styles.Title}>
+            {props.name}
+          </div>
           <div className={styles.Text}>
             {props.preview}
           </div>

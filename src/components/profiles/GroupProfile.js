@@ -91,7 +91,7 @@ const GroupProfile = props => (
       <li className={styles.GroupMenuItems}>
         <button
           className={styles.ItemBtn}
-          onClick = {()=>{props.getInviteCode()}}
+          onClick={() => { props.getInviteCode(); }}
         >
 		                Получить инвайт
         </button>
@@ -115,7 +115,7 @@ const GroupProfile = props => (
     <div className={styles.CloseProfile}>
       <button
         className={styles.CloseBtn}
-        onClick = {()=>{props.profileToggle()}}
+        onClick={() => { props.profileToggle(); }}
       >
 						Закрыть
       </button>

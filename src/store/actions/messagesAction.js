@@ -1,8 +1,8 @@
 import { SET_ACTIVE_CHAT, GET_MESSAGES, ADD_MESSAGE } from '../constants';
 import instance from '../axios-docs';
 
-import MessagesAPI from '../reducers/messagesStub';
-import MessagesCache from '../reducers/messagesCache'; // кэш для сообщений
+// import MessagesAPI from '../reducers/messagesStub';
+// import MessagesCache from '../reducers/messagesCache'; // кэш для сообщений
 
 export function setActiveChat(id, number) {
   return {

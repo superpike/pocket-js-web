@@ -26,7 +26,14 @@ const reducers = combineReducers({
   ws: websocketReducer,
 });
 
+const rootReducer = (state, action) => {
+  if (action.type === 'LOGOUT') {
+    state = undefined;
+  }
+  return reducers(state, action);
+};
+
 const middleware = applyMiddleware(promise(), logger, thunk, websocket);
 
-const store = createStore(reducers, middleware);
+const store = createStore(rootReducer, middleware);
 export default store;

@@ -6,36 +6,24 @@ import { connect } from 'react-redux';
 
 import styles from './MenuItem.module.css';
 
-class MenuItem extends Component {
+export class MenuItem extends Component {
 
-	switchAction = (action) => {
-		switch (action) {
-			//выход из аккаунта (в главном меню)
-			case 'logout':
-				this.props.dispatch(logoutUser());
-				break;
-			//открыть профиль контакта/группы
-			case 'openProfile':
-				this.props.profileToggle();
-				break;
-			//открыть черный список
-			case 'usersListToggle':
-				this.props.usersListToggle();
-				break;
-			default:
-				this.props.clicked();
-				break;
+	onClick = (text) => {
+		if(text === 'Выйти'){
+			this.props.dispatch(logoutUser());
+		}else if(text === 'Черный список'){
+			this.props.usersListToggle();
 		}
 	}
 
 	render() {
 		let item = (this.props.href === null) ? (
-			<div className={styles.Item} onClick={() => { this.switchAction(this.props.action) }}>
+			<div className={styles.Item} onClick={() => {this.onClick(this.props.text)}}>
 				<i className={styles.Icon + this.props.icon} />
 				<p className={styles.Text}>{this.props.text}</p>
 			</div>
 		) :
-			<Link to={this.props.href} className={styles.Item} onClick={() => { this.switchAction(this.props.action) }}>
+			<Link to={this.props.href} className={styles.Item} onClick={() => {this.onClick(this.props.text)}}>
 				<i className={styles.Icon + this.props.icon} />
 				<p className={styles.Text}>{this.props.text}</p>
 			</Link>

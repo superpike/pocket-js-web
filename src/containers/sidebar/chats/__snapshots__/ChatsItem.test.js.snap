@@ -26,6 +26,9 @@ exports[`render ChatsItem render correctly ChatsItem component 1`] = `
         className="Chat"
       >
         <div
+          className="Title"
+        />
+        <div
           className="Text"
         />
       </div>
