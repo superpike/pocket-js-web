@@ -37,6 +37,6 @@ export function searchGroup(name) {
 export function getInviteCode(id) {
   return {
     type: GET_INVITE_CODE,
-    payload: instance.post(`/groups/${id}/invites`),
+    payload: instance.post(`/groups/${id}/invites`)
   };
 }

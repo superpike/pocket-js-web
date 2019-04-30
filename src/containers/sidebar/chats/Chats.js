@@ -35,8 +35,8 @@ class Chats extends React.Component {
         });
     }
 
-    getInviteCode = () => {
-        this.props.dispatch(getInviteCode(this.state.id));
+    getInviteCode = (id) => {
+        this.props.dispatch(getInviteCode(id));
     }
 
     switchComponent() {

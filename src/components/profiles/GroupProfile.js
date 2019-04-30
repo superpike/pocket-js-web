@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styles from './GroupProfile.module.css';
 
 const GroupProfile = props => (
-  <div className={styles.Profile} id={props.id}>
+  <div className={styles.Profile} id={props.profile.id}>
 
     <div className={styles.Header}>
       <div>
@@ -91,7 +91,7 @@ const GroupProfile = props => (
       <li className={styles.GroupMenuItems}>
         <button
           className={styles.ItemBtn}
-          onClick={() => { props.getInviteCode(); }}
+          onClick={() => { props.getInviteCode(props.profile.id); }}
         >
 		                Получить инвайт
         </button>
