@@ -34,6 +34,11 @@ export const EDIT_ACCOUNT_PENDING = 'EDIT_ACCOUNT_PENDING';
 export const EDIT_ACCOUNT_FULFILLED = 'EDIT_ACCOUNT_FULFILLED';
 export const EDIT_ACCOUNT_REJECTED = 'EDIT_ACCOUNT_REJECTED';
 
+export const POST_AVATAR = 'POST_AVATAR';
+export const POST_AVATAR_PENDING = 'POST_AVATAR_PENDING';
+export const POST_AVATAR_FULFILLED = 'POST_AVATAR_FULFILLED';
+export const POST_AVATAR_REJECTED = 'POST_AVATAR_REJECTED';
+
 //---------------------------------------------------------------------------------
 export const GET_USER_SELF = 'GET_USER_SELF';
 export const GET_USER_SELF_PENDING = 'GET_USER_SELF_PENDING';

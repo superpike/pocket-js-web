@@ -1,0 +1,30 @@
+.Field{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    height: 300px;
+    width: 400px;
+}
+.Title{
+    color: #3498db;
+    margin: 10px auto;
+}
+
+.Btn{
+    background-color: #3498db;
+    margin: 10px auto;
+    height: 30px;
+    width: 100px;
+}
+
+.CloseBtn{
+    align-self: flex-end;
+    border: none;
+    cursor: pointer;
+}
+
+.Preview{
+    height: 100px;
+    width: 100px;
+}
