@@ -3,7 +3,7 @@ import ProfileUserFoto from './ProfileUserFoto';
 
 class ProfileUserTop extends Component {
   render() {
-    return <ProfileUserFoto />;
+    return <ProfileUserFoto avatar={this.props.avatar}/>;
   }
 }
 export default ProfileUserTop;

@@ -8,12 +8,6 @@ const initialState = {
 
 export function accountReducer(state = initialState, action) {
   switch (action.type) {
-    case Constants.LOGOUT: {
-      state = {
-        ...initialState,
-      };
-      break;
-    }
     case Constants.GET_ACCOUNT_PENDING: {
       state = { ...state, is_loading_account: true };
       break;
@@ -56,6 +50,25 @@ export function accountReducer(state = initialState, action) {
         ...state,
         is_loading_changes: false,
         edit_fulfilled: false,
+        error_message: action.payload.message,
+      };
+      break;
+    }
+    case Constants.POST_AVATAR_PENDING: {
+      state = { ...state, is_loading_changes: true};
+      break;
+    }
+    case Constants.POST_AVATAR_FULFILLED: {
+      state = {
+        ...state,
+        is_loading_changes: false
+      };
+      break;
+    }
+    case Constants.POST_AVATAR_REJECTED: {
+      state = {
+        ...state,
+        is_loading_changes: false,
         error_message: action.payload.message,
       };
       break;

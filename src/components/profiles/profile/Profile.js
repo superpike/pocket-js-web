@@ -1,10 +1,14 @@
 import React, {Component} from "react";
 
-import {getAccount, editAccount} from '../../../store/actions/index';
+import {getAccount, editAccount, postAvatar} from '../../../store/actions/index';
 import {connect} from 'react-redux';
 
 import ProfileUserTop from "../profileUser/ProfileUserTop";
 import ProfileClose from "../profileUser/ProfileClose";
+import AvatarUpload from './AvatarUpload';
+import Modal from '../../UI/Modal/Modal';
+import Backdrop from '../../UI/Backdrop/Backdrop';
+
 
 import styles from "./Profile.module.css";
 
@@ -12,7 +16,11 @@ import styles from "./Profile.module.css";
 class Profile extends Component {
     state = {
         oldPassword: '',
-        newPassword: ''
+        newPassword: '',
+        avatarModal: false,
+        file: null,
+        previewUrl: null,
+        avatar: null
     }
 
     componentDidMount(){
@@ -30,16 +38,55 @@ class Profile extends Component {
         })
     }
 
+    avatarModalToggle = () => {
+		this.setState({
+			avatarModal: !this.state.avatarModal
+		});
+    }
+    
+    onChange = (e) => {
+        let file = e.target.files[0];
+        this.setState({
+            file: file,
+            previewUrl: URL.createObjectURL(file)
+        });
+    }
+
+    onFormSubmit = (e) =>{
+        e.preventDefault();
+        let avatar = this.state.previewUrl;
+        this.setState({
+            avatar: avatar
+        });
+        this.props.dispatch(postAvatar(this.state.file));
+    }
+
     render() {
         if (this.props.edit_fulfilled) {
             alert ('Пароль изменен');
         }
+        const avatarModal = this.state.avatarModal ? (
+			<>
+				<Backdrop show classesNames='MainMenu' />
+				<Modal classesNames='Center'>
+					<AvatarUpload
+						onChange={this.onChange}
+                        onFormSubmit={this.onFormSubmit}
+                        previewUrl={this.state.previewUrl}
+                        CloseModal={this.avatarModalToggle}
+					/>
+				</Modal>
+			</>
+        ) : null;
+        
         return (
             <section className={styles.profile}>
                 <div className={styles.header}>
                     <div className={styles['header__pic']}>
-                    <ProfileUserTop/>
-                    <button className={styles['change-btn']}>
+                    <ProfileUserTop avatar={this.state.avatar} />
+                    { avatarModal }
+                    <button className={styles['change-btn']}
+                            onClick={this.avatarModalToggle} >
                         <i className={styles.IconCamera + ' fas  fa-camera'}/>
                     </button>
                     </div>

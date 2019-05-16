@@ -8,4 +8,4 @@ export {
 } from './contactsActions';
 export { getUsers } from './usersActions';
 export { connectWS, sendWS, disconnectWS } from './websocketActions';
-export { getAccount, editAccount } from './accountActions';
+export { getAccount, editAccount, postAvatar } from './accountActions';
